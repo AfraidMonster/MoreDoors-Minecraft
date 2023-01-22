@@ -67,6 +67,8 @@
       "moredoors:ice_trapdoor",
       "moredoors:glass_door",
       "moredoors:glass_trapdoor",
+      "moredoors:bedrock_door",
+      "moredoors:bedrock_trapdoor",
       "moredoors:sponge_door",
       "moredoors:sponge_trapdoor",
       "moredoors:dripstone_door",
