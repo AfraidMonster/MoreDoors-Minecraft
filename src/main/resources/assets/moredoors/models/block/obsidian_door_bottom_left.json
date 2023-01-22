@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "moredoors:block/obsidian_door_bottom",
+    "top": "moredoors:block/obsidian_door_top"
+  }
+}

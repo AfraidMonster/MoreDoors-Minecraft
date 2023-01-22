@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "moredoors:block/end_stone_door_bottom",
+    "top": "moredoors:block/end_stone_door_top"
+  }
+}

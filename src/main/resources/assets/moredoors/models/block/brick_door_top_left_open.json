@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "moredoors:block/brick_door_bottom",
+    "top": "moredoors:block/brick_door_top"
+  }
+}
