@@ -1,18 +1,15 @@
 package afraidmonster.moredoors;
 
 import net.minecraft.block.DoorBlock;
-import net.minecraft.sound.SoundEvent;
-
 
 public class CustomDoorBlock extends DoorBlock {
 
-    public CustomDoorBlock(Settings settings, SoundEvent closeSound, SoundEvent openSound) {
-        super(settings.nonOpaque(), closeSound, openSound);
-        
+    protected CustomDoorBlock(Settings settings) {
+        super(settings.nonOpaque());
         //TODO Auto-generated constructor stub
-    }
 
-    
+        
+    }
 
     
 

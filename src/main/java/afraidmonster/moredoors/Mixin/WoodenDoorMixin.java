@@ -2,8 +2,7 @@ package afraidmonster.moredoors.Mixin;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DoorBlock;
-import net.minecraft.registry.tag.BlockTags;
-
+import net.minecraft.tag.BlockTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,7 +22,7 @@ public class WoodenDoorMixin {
 
 
 
-
+           //     blockState.isIn(BlockTags.WOODEN_DOORS
 
 
 
