@@ -27,7 +27,7 @@ public class moredoorsclient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.COAL_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.ANDESITE_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.ANDESITE_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.PRISMARINE_DOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.PRISMARINE_DOOR, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.POLISHED_DEEPSLATE_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.POLISHED_DEEPSLATE_TRAPDOOR, RenderLayer.getCutout());
