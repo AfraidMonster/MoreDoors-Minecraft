@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_left",
-  "textures": {
-    "bottom": "moredoors:block/prismarine_door_bottom",
-    "top": "moredoors:block/prismarine_door_top"
-  }
-}

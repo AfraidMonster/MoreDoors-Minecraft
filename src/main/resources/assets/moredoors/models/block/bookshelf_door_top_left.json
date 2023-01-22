@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_left",
-  "textures": {
-    "bottom": "moredoors:block/bookshelf_door_bottom",
-    "top": "moredoors:block/bookshelf_door_top"
-  }
-}

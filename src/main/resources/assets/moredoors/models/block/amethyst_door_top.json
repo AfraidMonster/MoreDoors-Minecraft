@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "moredoors:block/amethyst_door_bottom",
+        "top": "moredoors:block/amethyst_door_top"
+    }
+}
