@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "moredoors:block/nether_brick_door_bottom",
+        "top": "moredoors:block/nether_brick_door_top"
+    }
+}

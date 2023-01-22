@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "moredoors:block/lapis_door_bottom",
+        "top": "moredoors:block/lapis_door_top"
+    }
+}

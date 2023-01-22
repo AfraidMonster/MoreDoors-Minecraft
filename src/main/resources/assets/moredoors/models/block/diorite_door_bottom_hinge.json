@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "moredoors:block/diorite_door_bottom",
+        "top": "moredoors:block/diorite_door_top"
+    }
+}

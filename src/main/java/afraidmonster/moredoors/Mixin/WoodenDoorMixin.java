@@ -22,7 +22,7 @@ public class WoodenDoorMixin {
 
 
 
-           //     blockState.isIn(BlockTags.WOODEN_DOORS
+
 
 
 
