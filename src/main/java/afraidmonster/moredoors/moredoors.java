@@ -136,7 +136,7 @@ public class moredoors implements ModInitializer {
 	public static final Block COAL_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(5.0f).sounds(BlockSoundGroup.STONE).resistance(6F), METAL_CLOSE, METAL_OPEN);
 	public static final Block COAL_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(5.0f).sounds(BlockSoundGroup.STONE).resistance(6F), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
 
-	//Stone Doors
+	//Other Doors
 	public static final Block STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.STONE), NORMAL_CLOSE, NORMAL_OPEN);
 	public static final Block STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.STONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
 
@@ -197,11 +197,11 @@ public class moredoors implements ModInitializer {
 	public static final Block AMETHYST_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK), NORMAL_CLOSE, NORMAL_OPEN);
 	public static final Block AMETHYST_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
 
-	//Smooth Stone Doors
+	
 	public static final Block SMOOTH_STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE), NORMAL_CLOSE, NORMAL_OPEN);
 	public static final Block SMOOTH_STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
 
-	//Brick Doors
+	
 	public static final Block OBSIDIAN_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(50.0f).sounds(BlockSoundGroup.STONE).resistance(1200F),METAL_CLOSE, METAL_OPEN);
 	public static final Block OBSIDIAN_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(50.0f).sounds(BlockSoundGroup.STONE).resistance(1200F), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
 
@@ -245,7 +245,6 @@ public class moredoors implements ModInitializer {
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "copper_door"), COPPER_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "copper_door"), new BlockItem(COPPER_DOOR, new Item.Settings()));
 		
-		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "netherite_door"), NETHERITE_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "netherite_door"), new BlockItem(NETHERITE_DOOR, new Item.Settings()));
 		
@@ -258,26 +257,33 @@ public class moredoors implements ModInitializer {
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "coal_door"), COAL_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "coal_door"), new BlockItem(COAL_DOOR, new Item.Settings()));
 		
-		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "stone_door"), STONE_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "stone_door"), new BlockItem(STONE_DOOR, new Item.Settings()));
 		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "gold_trapdoor"), GOLD_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "gold_trapdoor"), new BlockItem(GOLD_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "diamond_trapdoor"), DIAMOND_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "diamond_trapdoor"), new BlockItem(DIAMOND_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "lapis_trapdoor"), LAPIS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "lapis_trapdoor"), new BlockItem(LAPIS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "copper_trapdoor"), COPPER_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "copper_trapdoor"), new BlockItem(COPPER_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "netherite_trapdoor"), NETHERITE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "netherite_trapdoor"), new BlockItem(NETHERITE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "emerald_trapdoor"), EMERALD_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "emerald_trapdoor"), new BlockItem(EMERALD_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "redstone_trapdoor"), REDSTONE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "redstone_trapdoor"), new BlockItem(REDSTONE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "coal_trapdoor"), COAL_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "coal_trapdoor"), new BlockItem(COAL_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "stone_trapdoor"), STONE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "stone_trapdoor"), new BlockItem(STONE_TRAPDOOR, new Item.Settings()));
 		
@@ -307,22 +313,31 @@ public class moredoors implements ModInitializer {
 		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "polished_deepslate_door"), POLISHED_DEEPSLATE_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "polished_deepslate_door"), new BlockItem(POLISHED_DEEPSLATE_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "cobblestone_trapdoor"), COBBLESTONE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "cobblestone_trapdoor"), new BlockItem(COBBLESTONE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "andesite_trapdoor"), ANDESITE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "andesite_trapdoor"), new BlockItem(ANDESITE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "diorite_trapdoor"), DIORITE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "diorite_trapdoor"), new BlockItem(DIORITE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "granite_trapdoor"), GRANITE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "granite_trapdoor"), new BlockItem(GRANITE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "sandstone_trapdoor"), SANDSTONE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "sandstone_trapdoor"), new BlockItem(SANDSTONE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "red_sandstone_trapdoor"), RED_SANDSTONE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "red_sandstone_trapdoor"), new BlockItem(RED_SANDSTONE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "cobbled_deepslate_trapdoor"), COBBLED_DEEPSLATE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "cobbled_deepslate_trapdoor"), new BlockItem(COBBLED_DEEPSLATE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "calcite_trapdoor"), CALCITE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "calcite_trapdoor"), new BlockItem(CALCITE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "polished_deepslate_trapdoor"), POLISHED_DEEPSLATE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "polished_deepslate_trapdoor"), new BlockItem(POLISHED_DEEPSLATE_TRAPDOOR, new Item.Settings()));
 		
@@ -355,20 +370,28 @@ public class moredoors implements ModInitializer {
 		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "basalt_trapdoor"), BASALT_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "basalt_trapdoor"), new BlockItem(BASALT_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "blackstone_trapdoor"), BLACKSTONE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "blackstone_trapdoor"), new BlockItem(BLACKSTONE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "netherrack_trapdoor"), NETHERRACK_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "netherrack_trapdoor"), new BlockItem(NETHERRACK_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "end_stone_trapdoor"), END_STONE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "end_stone_trapdoor"), new BlockItem(END_STONE_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "purpur_trapdoor"), PURPUR_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "purpur_trapdoor"), new BlockItem(PURPUR_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "quartz_trapdoor"), QUARTZ_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "quartz_trapdoor"), new BlockItem(QUARTZ_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "nether_brick_trapdoor"), NETHER_BRICK_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "nether_brick_trapdoor"), new BlockItem(NETHER_BRICK_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "prismarine_trapdoor"), PRISMARINE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "prismarine_trapdoor"), new BlockItem(PRISMARINE_TRAPDOOR, new Item.Settings()));
+		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "bookshelf_trapdoor"), BOOKSHELF_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "bookshelf_trapdoor"), new BlockItem(BOOKSHELF_TRAPDOOR, new Item.Settings()));
 		
