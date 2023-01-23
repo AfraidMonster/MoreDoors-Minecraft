@@ -83,6 +83,41 @@ public class moredoorsclient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.DRIPSTONE_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.DRIPSTONE_TRAPDOOR, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.BLACK_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.BLACK_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.BLUE_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.BLUE_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.BROWN_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.BROWN_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.CYAN_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.CYAN_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.GRAY_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.GRAY_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.GREEN_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.GREEN_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.LIGHT_BLUE_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.LIGHT_BLUE_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.LIGHT_GRAY_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.LIGHT_GRAY_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.LIME_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.LIME_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.MAGENTA_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.MAGENTA_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.ORANGE_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.ORANGE_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.PINK_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.PINK_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.PURPLE_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.PURPLE_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.RED_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.RED_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.WHITE_STAINED_GLASS_DOOR, RenderLayer.getTranslucent()); 
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.WHITE_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.YELLOW_STAINED_GLASS_DOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.YELLOW_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.TINTED_GLASS_DOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(moredoors.TINTED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
         
         
         

@@ -107,6 +107,40 @@ public class moredoors implements ModInitializer {
 				entries.add(moredoors.SPONGE_TRAPDOOR);
 				entries.add(moredoors.DRIPSTONE_DOOR);
 				entries.add(moredoors.DRIPSTONE_TRAPDOOR);
+				entries.add(moredoors.BLACK_STAINED_GLASS_DOOR); 
+				entries.add(moredoors.BLACK_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.BLUE_STAINED_GLASS_DOOR);
+				entries.add(moredoors.BLUE_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.BROWN_STAINED_GLASS_DOOR);
+				entries.add(moredoors.BROWN_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.CYAN_STAINED_GLASS_DOOR);
+				entries.add(moredoors.CYAN_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.GRAY_STAINED_GLASS_DOOR);
+				entries.add(moredoors.GRAY_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.GREEN_STAINED_GLASS_DOOR);
+				entries.add(moredoors.GREEN_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.LIGHT_BLUE_STAINED_GLASS_DOOR);
+				entries.add(moredoors.LIGHT_BLUE_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.LIGHT_GRAY_STAINED_GLASS_DOOR);
+				entries.add(moredoors.LIGHT_GRAY_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.LIME_STAINED_GLASS_DOOR);
+				entries.add(moredoors.LIME_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.MAGENTA_STAINED_GLASS_DOOR);
+				entries.add(moredoors.MAGENTA_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.ORANGE_STAINED_GLASS_DOOR);
+				entries.add(moredoors.ORANGE_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.PINK_STAINED_GLASS_DOOR);
+				entries.add(moredoors.PINK_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.PURPLE_STAINED_GLASS_DOOR);
+				entries.add(moredoors.PURPLE_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.RED_STAINED_GLASS_DOOR);
+				entries.add(moredoors.RED_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.WHITE_STAINED_GLASS_DOOR);
+				entries.add(moredoors.WHITE_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.YELLOW_STAINED_GLASS_DOOR);
+				entries.add(moredoors.YELLOW_STAINED_GLASS_TRAPDOOR);
+				entries.add(moredoors.TINTED_GLASS_DOOR);
+				entries.add(moredoors.TINTED_GLASS_TRAPDOOR);
 
 			})
 
@@ -212,7 +246,7 @@ public class moredoors implements ModInitializer {
 	public static final Block ICE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.ICE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
 
 	public static final Block GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GLASS), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
 
 	public static final Block BEDROCK_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(-1.0f).sounds(BlockSoundGroup.STONE).resistance(3600000F), METAL_CLOSE, METAL_OPEN);
 	public static final Block BEDROCK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(-1.0f).sounds(BlockSoundGroup.STONE).resistance(3600000F), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
@@ -222,6 +256,60 @@ public class moredoors implements ModInitializer {
 
 	public static final Block DRIPSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.DRIPSTONE_BLOCK), NORMAL_CLOSE, NORMAL_OPEN);
 	public static final Block DRIPSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.DRIPSTONE_BLOCK), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	//Glass Doors
+	public static final Block BLACK_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block BLACK_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	
+	public static final Block BLUE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block BLUE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	
+	public static final Block BROWN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block BROWN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block CYAN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block CYAN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block GRAY_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block GRAY_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block GREEN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block GREEN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block LIGHT_BLUE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block LIGHT_BLUE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block LIGHT_GRAY_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block LIGHT_GRAY_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block LIME_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block LIME_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block MAGENTA_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block MAGENTA_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block ORANGE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block ORANGE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block PINK_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block PINK_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block PURPLE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block PURPLE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block RED_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block RED_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block WHITE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block WHITE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block YELLOW_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block YELLOW_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	public static final Block TINTED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
+	public static final Block TINTED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+
+	
 
 	
 
@@ -391,7 +479,7 @@ public class moredoors implements ModInitializer {
 
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "prismarine_trapdoor"), PRISMARINE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "prismarine_trapdoor"), new BlockItem(PRISMARINE_TRAPDOOR, new Item.Settings()));
-		
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "bookshelf_trapdoor"), BOOKSHELF_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "bookshelf_trapdoor"), new BlockItem(BOOKSHELF_TRAPDOOR, new Item.Settings()));
 		
@@ -449,6 +537,78 @@ public class moredoors implements ModInitializer {
 
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "dripstone_trapdoor"), DRIPSTONE_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "dripstone_trapdoor"), new BlockItem(DRIPSTONE_TRAPDOOR, new Item.Settings()));
+
+
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "black_stained_glass_door"), BLACK_STAINED_GLASS_DOOR); 
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "black_stained_glass_door"), new BlockItem(BLACK_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "black_stained_glass_trapdoor"), BLACK_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "black_stained_glass_trapdoor"), new BlockItem(BLACK_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "blue_stained_glass_door"), BLUE_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "blue_stained_glass_door"), new BlockItem(BLUE_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "blue_stained_glass_trapdoor"), BLUE_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "blue_stained_glass_trapdoor"), new BlockItem(BLUE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "brown_stained_glass_door"), BROWN_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "brown_stained_glass_door"), new BlockItem(BROWN_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "brown_stained_glass_trapdoor"), BROWN_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "brown_stained_glass_trapdoor"), new BlockItem(BROWN_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "cyan_stained_glass_door"), CYAN_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "cyan_stained_glass_door"), new BlockItem(CYAN_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "cyan_stained_glass_trapdoor"), CYAN_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "cyan_stained_glass_trapdoor"), new BlockItem(CYAN_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "gray_stained_glass_door"), GRAY_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "gray_stained_glass_door"), new BlockItem(GRAY_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "gray_stained_glass_trapdoor"), GRAY_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "gray_stained_glass_trapdoor"), new BlockItem(GRAY_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "green_stained_glass_door"), GREEN_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "green_stained_glass_door"), new BlockItem(GREEN_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "green_stained_glass_trapdoor"), GREEN_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "green_stained_glass_trapdoor"), new BlockItem(GREEN_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "light_blue_stained_glass_door"), LIGHT_BLUE_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "light_blue_stained_glass_door"), new BlockItem(LIGHT_BLUE_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "light_blue_stained_glass_trapdoor"), LIGHT_BLUE_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "light_blue_stained_glass_trapdoor"), new BlockItem(LIGHT_BLUE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "light_gray_stained_glass_door"), LIGHT_GRAY_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "light_gray_stained_glass_door"), new BlockItem(LIGHT_GRAY_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "light_gray_stained_glass_trapdoor"), LIGHT_GRAY_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "light_gray_stained_glass_trapdoor"), new BlockItem(LIGHT_GRAY_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "lime_stained_glass_door"), LIME_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "lime_stained_glass_door"), new BlockItem(LIME_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "lime_stained_glass_trapdoor"), LIME_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "lime_stained_glass_trapdoor"), new BlockItem(LIME_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "magenta_stained_glass_door"), MAGENTA_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "magenta_stained_glass_door"), new BlockItem(MAGENTA_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "magenta_stained_glass_trapdoor"), MAGENTA_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "magenta_stained_glass_trapdoor"), new BlockItem(MAGENTA_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "orange_stained_glass_door"), ORANGE_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "orange_stained_glass_door"), new BlockItem(ORANGE_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "orange_stained_glass_trapdoor"), ORANGE_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "orange_stained_glass_trapdoor"), new BlockItem(ORANGE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "pink_stained_glass_door"), PINK_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "pink_stained_glass_door"), new BlockItem(PINK_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "pink_stained_glass_trapdoor"), PINK_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "pink_stained_glass_trapdoor"), new BlockItem(PINK_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "purple_stained_glass_door"), PURPLE_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "purple_stained_glass_door"), new BlockItem(PURPLE_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "purple_stained_glass_trapdoor"), PURPLE_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "purple_stained_glass_trapdoor"), new BlockItem(PURPLE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "red_stained_glass_door"), RED_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "red_stained_glass_door"), new BlockItem(RED_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "red_stained_glass_trapdoor"), RED_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "red_stained_glass_trapdoor"), new BlockItem(RED_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "white_stained_glass_door"), WHITE_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "white_stained_glass_door"), new BlockItem(WHITE_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "white_stained_glass_trapdoor"), WHITE_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "white_stained_glass_trapdoor"), new BlockItem(WHITE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "yellow_stained_glass_door"), YELLOW_STAINED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "yellow_stained_glass_door"), new BlockItem(YELLOW_STAINED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "yellow_stained_glass_trapdoor"), YELLOW_STAINED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "yellow_stained_glass_trapdoor"), new BlockItem(YELLOW_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "tinted_glass_door"), TINTED_GLASS_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "tinted_glass_door"), new BlockItem(TINTED_GLASS_DOOR, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "tinted_glass_trapdoor"), TINTED_GLASS_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "tinted_glass_trapdoor"), new BlockItem(TINTED_GLASS_TRAPDOOR, new Item.Settings()));
+
+		
 		
 		
 
