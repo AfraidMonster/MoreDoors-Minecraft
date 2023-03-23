@@ -9,59 +9,8 @@
       "moredoors:emerald_door",
       "moredoors:redstone_door",
       "moredoors:coal_door",
-      "moredoors:stone_door",
-      "moredoors:cobblestone_door",
-      "moredoors:andesite_door",
-      "moredoors:diorite_door",
-      "moredoors:granite_door",
-      "moredoors:sandstone_door",
-      "moredoors:red_sandstone_door",
-      "moredoors:cobbled_deepslate_door",
-      "moredoors:calcite_door",
-      "moredoors:polished_deepslate_door",
-      "moredoors:basalt_door",
-      "moredoors:blackstone_door",
-      "moredoors:netherrack_door",
-      "moredoors:end_stone_door",
-      "moredoors:purpur_door",
-      "moredoors:quartz_door",
-      "moredoors:nether_brick_door",
-      "moredoors:prismarine_door",
-      "moredoors:bookshelf_door",
-      "moredoors:amethyst_door",
-      "moredoors:smooth_stone_door",
       "moredoors:obsidian_door",
-      "moredoors:brick_door",
-      "moredoors:ice_door",
-      "moredoors:glass_door",
-      "moredoors:bedrock_door",
-      "moredoors:sponge_door",
-      "moredoors:dripstone_door"
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      "moredoors:bedrock_door"
     ]
 
   }

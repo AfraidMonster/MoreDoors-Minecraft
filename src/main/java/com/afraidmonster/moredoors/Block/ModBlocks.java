@@ -16,9 +16,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -259,6 +257,119 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DRIPSTONE_TRAPDOOR = registerBlock("dripstone_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+
+    public static final RegistryObject<Block> MUD_BRICK_DOOR = registerBlock("mud_brick_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_DOOR = registerBlock("black_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_DOOR = registerBlock("blue_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_DOOR = registerBlock("brown_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_DOOR = registerBlock("cyan_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.CYAN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_DOOR = registerBlock("gray_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.GRAY_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_DOOR = registerBlock("green_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_DOOR = registerBlock("light_blue_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_DOOR = registerBlock("light_gray_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    
+
+
+    public static final RegistryObject<Block> MUD_BRICK_TRAPDOOR = registerBlock("mud_brick_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_TRAPDOOR = registerBlock("black_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+            
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_TRAPDOOR = registerBlock("blue_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_TRAPDOOR = registerBlock("brown_stained_glass_trapdoor", () ->        
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_TRAPDOOR = registerBlock("cyan_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.CYAN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_TRAPDOOR = registerBlock("gray_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.GRAY_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_TRAPDOOR = registerBlock("green_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_TRAPDOOR = registerBlock("light_blue_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_TRAPDOOR = registerBlock("light_gray_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_DOOR = registerBlock("lime_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_DOOR = registerBlock("magenta_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.MAGENTA_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_DOOR = registerBlock("orange_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.ORANGE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_DOOR = registerBlock("pink_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.PINK_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_DOOR = registerBlock("purple_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.PURPLE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_DOOR = registerBlock("red_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_DOOR = registerBlock("white_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_DOOR = registerBlock("yellow_stained_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_TRAPDOOR = registerBlock("lime_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_TRAPDOOR = registerBlock("magenta_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.MAGENTA_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_TRAPDOOR = registerBlock("orange_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.ORANGE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_TRAPDOOR = registerBlock("pink_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.PINK_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_TRAPDOOR = registerBlock("purple_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.PURPLE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_TRAPDOOR = registerBlock("red_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_TRAPDOOR = registerBlock("white_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_TRAPDOOR = registerBlock("yellow_stained_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+   
+
+    
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -36,7 +36,26 @@
       "moredoors:glass_trapdoor",
       "moredoors:bedrock_trapdoor",
       "moredoors:sponge_trapdoor",
-      "moredoors:dripstone_trapdoor"
+      "moredoors:dripstone_trapdoor",
+      "moredoors:black_stained_glass_trapdoor",
+      "moredoors:blue_stained_glass_trapdoor",
+      "moredoors:brown_stained_glass_trapdoor",
+      "moredoors:cyan_stained_glass_trapdoor",
+      "moredoors:gray_stained_glass_trapdoor",
+      "moredoors:green_stained_glass_trapdoor",
+      "moredoors:light_blue_stained_glass_trapdoor",
+      "moredoors:light_gray_stained_glass_trapdoor",
+      "moredoors:lime_stained_glass_trapdoor",
+      "moredoors:magenta_stained_glass_trapdoor",
+      "moredoors:orange_stained_glass_trapdoor",
+      "moredoors:pink_stained_glass_trapdoor",
+      "moredoors:purple_stained_glass_trapdoor",
+      "moredoors:red_stained_glass_trapdoor",
+      "moredoors:white_stained_glass_trapdoor",
+      "moredoors:yellow_stained_glass_trapdoor",
+      "moredoors:tinted_glass_trapdoor",
+      "moredoors:mud_brick_trapdoor"
+
     ]
 
   }
