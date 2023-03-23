@@ -131,7 +131,9 @@ public class MoreDoors
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_STAINED_GLASS_DOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_DOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_DOOR.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TINTED_GLASS_DOOR.get(), RenderType.translucent());
         
+
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_TRAPDOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_TRAPDOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_TRAPDOOR.get(), RenderType.translucent());
@@ -148,6 +150,7 @@ public class MoreDoors
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.RED_STAINED_GLASS_TRAPDOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_TRAPDOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_TRAPDOOR.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TINTED_GLASS_TRAPDOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MUD_BRICK_TRAPDOOR.get(), RenderType.translucent());
     }
 

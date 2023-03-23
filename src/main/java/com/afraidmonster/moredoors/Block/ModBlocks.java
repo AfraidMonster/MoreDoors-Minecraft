@@ -342,6 +342,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> YELLOW_STAINED_GLASS_DOOR = registerBlock("yellow_stained_glass_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
 
+    public static final RegistryObject<Block> TINTED_GLASS_DOOR = registerBlock("tinted_glass_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS), NORMAL_CLOSE, NORMAL_OPEN));
+
+    
+
 
     public static final RegistryObject<Block> LIME_STAINED_GLASS_TRAPDOOR = registerBlock("lime_stained_glass_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
@@ -366,6 +371,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> YELLOW_STAINED_GLASS_TRAPDOOR = registerBlock("yellow_stained_glass_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
+
+    public static final RegistryObject<Block> TINTED_GLASS_TRAPDOOR = registerBlock("tinted_glass_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN));
 
    
 
