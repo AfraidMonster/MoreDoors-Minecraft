@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.TrapDoorBlock;
 
 public class CustomTrapDoorBlock extends TrapDoorBlock {
     public CustomTrapDoorBlock(Properties properties, SoundEvent soundEventClose, SoundEvent soundEventOpen) {
-        super(properties.noOcclusion(), soundEventClose, soundEventOpen);
+        super(properties.noOcclusion(), type);
     }
 }

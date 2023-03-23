@@ -396,7 +396,7 @@ public class ModBlocks {
 
 
     public static void registerTab(CreativeModeTabEvent.Register event) {
-        event.registerCreativeModeTab(new ResourceLocation("moredoorstab", MoreDoors.MODID), builder -> builder.icon(() -> new ItemStack(ModBlocks.GOLD_DOOR.get())).displayItems((flags, output, isop) -> ModItems.ITEMS.getEntries().forEach(o -> output.accept(o.get()))).title(Component.translatable("itemGroup.moredoorstab")));
+        event.registerCreativeModeTab(new ResourceLocation("moredoorstab", MoreDoors.MODID), builder -> builder.icon(() -> new ItemStack(ModBlocks.GOLD_DOOR.get())).displayItems((flags, output) -> ModItems.ITEMS.getEntries().forEach(o -> output.accept(o.get()))).title(Component.translatable("itemGroup.moredoorstab")));
     }
 
 
