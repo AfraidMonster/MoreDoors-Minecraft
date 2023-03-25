@@ -160,12 +160,10 @@ public class moredoors implements ModInitializer {
 		BlockSoundGroup soundgroup = block.getSoundGroup(null);
 
 		if(isMetal == true){
-		     final BlockSetType BLOCKSET = BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"), soundgroup, METAL_CLOSE, METAL_OPEN, METAL_TRAP_CLOSE, METAL_TRAP_OPEN, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_STONE_BUTTON_CLICK_OFF, SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON);
-		     return BLOCKSET;
+			return BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"), soundgroup, METAL_CLOSE, METAL_OPEN, METAL_TRAP_CLOSE, METAL_TRAP_OPEN, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_STONE_BUTTON_CLICK_OFF, SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON);
 		
 		}else{
-			 final BlockSetType BLOCKSET = BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"), soundgroup, WOOD_CLOSE, WOOD_OPEN, WOOD_TRAP_CLOSE, WOOD_TRAP_OPEN, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON);
-			 return BLOCKSET;
+			return BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"), soundgroup, WOOD_CLOSE, WOOD_OPEN, WOOD_TRAP_CLOSE, WOOD_TRAP_OPEN, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON);
 		}
 		
 		
@@ -190,7 +188,7 @@ public class moredoors implements ModInitializer {
 	public static final Block NETHERITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.NETHERITE_BLOCK), registerSound(Blocks.NETHERITE_BLOCK, true));
 	public static final Block NETHERITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.NETHERITE_BLOCK), registerSound(Blocks.NETHERITE_BLOCK, true));
 	
-	public static final Block EMERALD_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK), registerSound(Blocks.EMERALD_BLOCK, true));
+	public static final Block EMERALD_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.EMERALD_BLOCK), registerSound(Blocks.EMERALD_BLOCK, true));
 	public static final Block EMERALD_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.EMERALD_BLOCK), registerSound(Blocks.EMERALD_BLOCK, true));
 	
 	public static final Block REDSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK), registerSound(Blocks.REDSTONE_BLOCK, true));
@@ -203,8 +201,8 @@ public class moredoors implements ModInitializer {
 	public static final Block STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.STONE), registerSound(Blocks.STONE, false));
 	public static final Block STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.STONE), registerSound(Blocks.STONE, false));
 
-	public static final Block COBBLESTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE), registerSound(Blocks.STONE, false));
-	public static final Block COBBLESTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE), registerSound(Blocks.STONE, false));
+	public static final Block COBBLESTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE), registerSound(Blocks.COBBLESTONE, false));
+	public static final Block COBBLESTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE), registerSound(Blocks.COBBLESTONE, false));
 
 	public static final Block ANDESITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_ANDESITE), registerSound(Blocks.POLISHED_ANDESITE, false));
 	public static final Block ANDESITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_ANDESITE), registerSound(Blocks.POLISHED_ANDESITE, false));
