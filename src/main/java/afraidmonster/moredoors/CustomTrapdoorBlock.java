@@ -1,13 +1,13 @@
 package afraidmonster.moredoors;
 
+import net.minecraft.block.BlockSetType;
 import net.minecraft.block.TrapdoorBlock;
-import net.minecraft.sound.SoundEvent;
 
 public class CustomTrapdoorBlock extends TrapdoorBlock {
 
-    public CustomTrapdoorBlock(Settings settings, SoundEvent closeSound, SoundEvent openSound) {
-        super(settings.nonOpaque(), closeSound, openSound);
+    public CustomTrapdoorBlock(Settings settings, BlockSetType blockSetType) {
+        super(settings.nonOpaque(), blockSetType);
         //TODO Auto-generated constructor stub
-    }
-    
-}
+    }}
+
+   

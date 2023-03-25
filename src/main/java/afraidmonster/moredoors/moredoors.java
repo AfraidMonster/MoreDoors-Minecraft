@@ -3,14 +3,15 @@ package afraidmonster.moredoors;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSetType;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -22,19 +23,25 @@ import net.minecraft.util.Identifier;
 public class moredoors implements ModInitializer {
 
 	public static final String MOD_ID = "moredoors";
-	public static final SoundEvent METAL_OPEN = SoundEvents.BLOCK_IRON_DOOR_OPEN;
+	public static final SoundEvent WOOD_CLOSE = SoundEvents.BLOCK_WOODEN_DOOR_CLOSE;
+	public static final SoundEvent WOOD_OPEN = SoundEvents.BLOCK_WOODEN_DOOR_OPEN;
+
+	public static final SoundEvent WOOD_TRAP_CLOSE = SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE;
+	public static final SoundEvent WOOD_TRAP_OPEN = SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN;
+
 	public static final SoundEvent METAL_CLOSE = SoundEvents.BLOCK_IRON_DOOR_CLOSE;
-	public static final SoundEvent NORMAL_OPEN = SoundEvents.BLOCK_WOODEN_DOOR_OPEN;
-	public static final SoundEvent NORMAL_CLOSE = SoundEvents.BLOCK_WOODEN_DOOR_CLOSE;
-	public static final SoundEvent METAL_TRAPDOOR_OPEN = SoundEvents.BLOCK_IRON_TRAPDOOR_OPEN;
-	public static final SoundEvent METAL_TRAPDOOR_CLOSE = SoundEvents.BLOCK_IRON_TRAPDOOR_CLOSE;
-	public static final SoundEvent NORMAL_TRAPDOOR_OPEN = SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN;
-	public static final SoundEvent NORMAL_TRAPDOOR_CLOSE = SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN;
+	public static final SoundEvent METAL_OPEN = SoundEvents.BLOCK_IRON_DOOR_OPEN;
+
+	public static final SoundEvent METAL_TRAP_CLOSE = SoundEvents.BLOCK_IRON_TRAPDOOR_CLOSE;
+	public static final SoundEvent METAL_TRAP_OPEN = SoundEvents.BLOCK_IRON_TRAPDOOR_OPEN;
+	
+
+	
 
 	public static final ItemGroup MORE_DOORS = FabricItemGroup.builder(new Identifier("moredoors", "more_doors"))
             .icon(() -> new ItemStack(moredoors.GOLD_DOOR)) 
 			.displayName(Text.literal("More Doors"))
-			.entries((enabledFeatures, entries, operatorEnabled) -> {
+			.entries((enabledFeatures, entries) -> {
 				entries.add(moredoors.GOLD_DOOR);
 				entries.add(moredoors.GOLD_TRAPDOOR);
 				entries.add(moredoors.DIAMOND_DOOR);
@@ -147,172 +154,192 @@ public class moredoors implements ModInitializer {
 			})
 
             .build();
+	
 	//Metal Doors
-	public static final Block GOLD_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK), METAL_CLOSE, METAL_OPEN);
-	public static final Block GOLD_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static BlockSetType registerSound(Block block, Boolean isMetal)  {
+		BlockSoundGroup soundgroup = block.getSoundGroup(null);
+
+		if(isMetal == true){
+		     final BlockSetType BLOCKSET = BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"), soundgroup, METAL_CLOSE, METAL_OPEN, METAL_TRAP_CLOSE, METAL_TRAP_OPEN, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_STONE_BUTTON_CLICK_OFF, SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON);
+		     return BLOCKSET;
+		
+		}else{
+			 final BlockSetType BLOCKSET = BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"), soundgroup, WOOD_CLOSE, WOOD_OPEN, WOOD_TRAP_CLOSE, WOOD_TRAP_OPEN, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON);
+			 return BLOCKSET;
+		}
+		
+		
+		
+		
+	}
+
+
+
+	public static final Block GOLD_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK), registerSound(Blocks.GOLD_BLOCK, true));
+	public static final Block GOLD_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK), registerSound(Blocks.GOLD_BLOCK, true));
 	
-	public static final Block DIAMOND_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK), METAL_CLOSE, METAL_OPEN);
-	public static final Block DIAMOND_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block DIAMOND_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK), registerSound(Blocks.DIAMOND_BLOCK, true));
+	public static final Block DIAMOND_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK), registerSound(Blocks.DIAMOND_BLOCK, true));
 	
-	public static final Block LAPIS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK), METAL_CLOSE, METAL_OPEN);
-	public static final Block LAPIS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block LAPIS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK), registerSound(Blocks.LAPIS_BLOCK, true));
+	public static final Block LAPIS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK), registerSound(Blocks.LAPIS_BLOCK, true));
 	
-	public static final Block COPPER_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK), METAL_CLOSE, METAL_OPEN);
-	public static final Block COPPER_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block COPPER_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK), registerSound(Blocks.COPPER_BLOCK, true));
+	public static final Block COPPER_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK), registerSound(Blocks.COPPER_BLOCK, true));
 	
-	public static final Block NETHERITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.NETHERITE_BLOCK), METAL_CLOSE, METAL_OPEN);
-	public static final Block NETHERITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.NETHERITE_BLOCK), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block NETHERITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.NETHERITE_BLOCK), registerSound(Blocks.NETHERITE_BLOCK, true));
+	public static final Block NETHERITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.NETHERITE_BLOCK), registerSound(Blocks.NETHERITE_BLOCK, true));
 	
-	public static final Block EMERALD_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.EMERALD_BLOCK), METAL_CLOSE, METAL_OPEN);
-	public static final Block EMERALD_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.EMERALD_BLOCK), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block EMERALD_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK), registerSound(Blocks.EMERALD_BLOCK, true));
+	public static final Block EMERALD_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.EMERALD_BLOCK), registerSound(Blocks.EMERALD_BLOCK, true));
 	
-	public static final Block REDSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK), METAL_CLOSE, METAL_OPEN);
-	public static final Block REDSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block REDSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK), registerSound(Blocks.REDSTONE_BLOCK, true));
+	public static final Block REDSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.REDSTONE_BLOCK), registerSound(Blocks.REDSTONE_BLOCK, true));
 	
-	public static final Block COAL_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(5.0f).sounds(BlockSoundGroup.STONE).resistance(6F), METAL_CLOSE, METAL_OPEN);
-	public static final Block COAL_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(5.0f).sounds(BlockSoundGroup.STONE).resistance(6F), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block COAL_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(5.0f).sounds(BlockSoundGroup.STONE).resistance(6F), registerSound(Blocks.COAL_BLOCK, true));
+	public static final Block COAL_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(5.0f).sounds(BlockSoundGroup.STONE).resistance(6F), registerSound(Blocks.COAL_BLOCK, true));
 
 	//Other Doors
-	public static final Block STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.STONE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.STONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.STONE), registerSound(Blocks.STONE, false));
+	public static final Block STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.STONE), registerSound(Blocks.STONE, false));
 
-	public static final Block COBBLESTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block COBBLESTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block COBBLESTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE), registerSound(Blocks.STONE, false));
+	public static final Block COBBLESTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE), registerSound(Blocks.STONE, false));
 
-	public static final Block ANDESITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_ANDESITE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block ANDESITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_ANDESITE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block ANDESITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_ANDESITE), registerSound(Blocks.POLISHED_ANDESITE, false));
+	public static final Block ANDESITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_ANDESITE), registerSound(Blocks.POLISHED_ANDESITE, false));
 
-	public static final Block DIORITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_DIORITE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block DIORITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_DIORITE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block DIORITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_DIORITE), registerSound(Blocks.POLISHED_DIORITE, false));
+	public static final Block DIORITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_DIORITE), registerSound(Blocks.POLISHED_DIORITE, false));
 
-	public static final Block GRANITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_GRANITE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block GRANITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_GRANITE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block GRANITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_GRANITE), registerSound(Blocks.POLISHED_GRANITE, false));
+	public static final Block GRANITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_GRANITE), registerSound(Blocks.POLISHED_GRANITE, false));
 
-	public static final Block SANDSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.SANDSTONE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block SANDSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.SANDSTONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block SANDSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.SANDSTONE), registerSound(Blocks.SANDSTONE, false));
+	public static final Block SANDSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.SANDSTONE), registerSound(Blocks.SANDSTONE, false));
 
-	public static final Block RED_SANDSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.RED_SANDSTONE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block RED_SANDSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.RED_SANDSTONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block RED_SANDSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.RED_SANDSTONE), registerSound(Blocks.RED_SANDSTONE, false));
+	public static final Block RED_SANDSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.RED_SANDSTONE), registerSound(Blocks.RED_SANDSTONE, false));
 
-	public static final Block COBBLED_DEEPSLATE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.COBBLED_DEEPSLATE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block COBBLED_DEEPSLATE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.COBBLED_DEEPSLATE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block COBBLED_DEEPSLATE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.COBBLED_DEEPSLATE), registerSound(Blocks.COBBLED_DEEPSLATE, false));
+	public static final Block COBBLED_DEEPSLATE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.COBBLED_DEEPSLATE), registerSound(Blocks.COBBLED_DEEPSLATE, false));
 
-	public static final Block CALCITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.CALCITE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block CALCITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.CALCITE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block CALCITE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.CALCITE), registerSound(Blocks.CALCITE, false));
+	public static final Block CALCITE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.CALCITE), registerSound(Blocks.CALCITE, false));
 
-	public static final Block POLISHED_DEEPSLATE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_DEEPSLATE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block POLISHED_DEEPSLATE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_DEEPSLATE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block POLISHED_DEEPSLATE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_DEEPSLATE), registerSound(Blocks.POLISHED_DEEPSLATE, false));
+	public static final Block POLISHED_DEEPSLATE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.POLISHED_DEEPSLATE), registerSound(Blocks.POLISHED_DEEPSLATE, false));
 
-	public static final Block BASALT_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BASALT), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block BASALT_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BASALT), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block BASALT_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BASALT), registerSound(Blocks.BASALT, false));
+	public static final Block BASALT_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BASALT), registerSound(Blocks.BASALT, false));
 
-	public static final Block BLACKSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLACKSTONE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block BLACKSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLACKSTONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block BLACKSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLACKSTONE), registerSound(Blocks.BLACKSTONE, false));
+	public static final Block BLACKSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLACKSTONE), registerSound(Blocks.BLACKSTONE, false));
 
-	public static final Block NETHERRACK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.NETHERRACK), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block NETHERRACK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.NETHERRACK), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block NETHERRACK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.NETHERRACK), registerSound(Blocks.NETHERRACK, false));
+	public static final Block NETHERRACK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.NETHERRACK), registerSound(Blocks.NETHERRACK, false));
 
-	public static final Block END_STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.END_STONE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block END_STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.END_STONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block END_STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.END_STONE), registerSound(Blocks.END_STONE, false));
+	public static final Block END_STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.END_STONE), registerSound(Blocks.END_STONE, false));
 
-	public static final Block PURPUR_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PURPUR_BLOCK), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block PURPUR_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PURPUR_BLOCK), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block PURPUR_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PURPUR_BLOCK), registerSound(Blocks.PURPUR_BLOCK, false));
+	public static final Block PURPUR_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PURPUR_BLOCK), registerSound(Blocks.PURPUR_BLOCK, false));
 
-	public static final Block QUARTZ_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.QUARTZ_BLOCK), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block QUARTZ_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.QUARTZ_BLOCK), NORMAL_TRAPDOOR_OPEN, NORMAL_TRAPDOOR_CLOSE);
+	public static final Block QUARTZ_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.QUARTZ_BLOCK), registerSound(Blocks.QUARTZ_BLOCK, false));
+	public static final Block QUARTZ_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.QUARTZ_BLOCK), registerSound(Blocks.QUARTZ_BLOCK, false));
 
-	public static final Block NETHER_BRICK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.NETHER_BRICKS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block NETHER_BRICK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.NETHER_BRICKS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block NETHER_BRICK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.NETHER_BRICKS), registerSound(Blocks.NETHER_BRICKS, false));
+	public static final Block NETHER_BRICK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.NETHER_BRICKS), registerSound(Blocks.NETHER_BRICKS, false));
 
-	public static final Block PRISMARINE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PRISMARINE_BRICKS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block PRISMARINE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PRISMARINE_BRICKS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block PRISMARINE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PRISMARINE_BRICKS), registerSound(Blocks.PRISMARINE_BRICKS, false));
+	public static final Block PRISMARINE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PRISMARINE_BRICKS), registerSound(Blocks.PRISMARINE_BRICKS, false));
 
-	public static final Block BOOKSHELF_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BOOKSHELF), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block BOOKSHELF_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BOOKSHELF), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block BOOKSHELF_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BOOKSHELF), registerSound(Blocks.BOOKSHELF, false));
+	public static final Block BOOKSHELF_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BOOKSHELF), registerSound(Blocks.BOOKSHELF, false));
 
-	public static final Block AMETHYST_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block AMETHYST_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
-
-	
-	public static final Block SMOOTH_STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block SMOOTH_STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block AMETHYST_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK), registerSound(Blocks.AMETHYST_BLOCK, false));
+	public static final Block AMETHYST_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK), registerSound(Blocks.AMETHYST_BLOCK, false));
 
 	
-	public static final Block OBSIDIAN_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(50.0f).sounds(BlockSoundGroup.STONE).resistance(1200F),METAL_CLOSE, METAL_OPEN);
-	public static final Block OBSIDIAN_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(50.0f).sounds(BlockSoundGroup.STONE).resistance(1200F), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block SMOOTH_STONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE), registerSound(Blocks.SMOOTH_STONE, false));
+	public static final Block SMOOTH_STONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE), registerSound(Blocks.SMOOTH_STONE, false));
 
-	public static final Block BRICK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BRICKS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block BRICK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BRICKS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	
+	public static final Block OBSIDIAN_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(50.0f).sounds(BlockSoundGroup.STONE).resistance(1200F),registerSound(Blocks.OBSIDIAN, true));
+	public static final Block OBSIDIAN_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(50.0f).sounds(BlockSoundGroup.STONE).resistance(1200F), registerSound(Blocks.OBSIDIAN, true));
 
-	public static final Block ICE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.ICE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block ICE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.ICE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block BRICK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BRICKS), registerSound(Blocks.BRICKS, false));
+	public static final Block BRICK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BRICKS), registerSound(Blocks.BRICKS, false));
 
-	public static final Block GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block ICE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.ICE), registerSound(Blocks.ICE, false));
+	public static final Block ICE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.ICE), registerSound(Blocks.ICE, false));
+	
+	public static final Block GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GLASS), registerSound(Blocks.GLASS, false));
+	public static final Block GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GLASS), registerSound(Blocks.GLASS, false));
 
-	public static final Block BEDROCK_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(-1.0f).sounds(BlockSoundGroup.STONE).resistance(3600000F), METAL_CLOSE, METAL_OPEN);
-	public static final Block BEDROCK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(-1.0f).sounds(BlockSoundGroup.STONE).resistance(3600000F), METAL_TRAPDOOR_CLOSE, METAL_TRAPDOOR_OPEN);
+	public static final Block BEDROCK_DOOR = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL).hardness(-1.0f).sounds(BlockSoundGroup.STONE).resistance(3600000F), registerSound(Blocks.BEDROCK, true));
+	public static final Block BEDROCK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.of(Material.METAL).hardness(-1.0f).sounds(BlockSoundGroup.STONE).resistance(3600000F), registerSound(Blocks.BEDROCK, true));
 
-	public static final Block SPONGE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.SPONGE), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block SPONGE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.SPONGE), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block SPONGE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.SPONGE), registerSound(Blocks.SPONGE, false));
+	public static final Block SPONGE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.SPONGE), registerSound(Blocks.SPONGE, false));
 
-	public static final Block DRIPSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.DRIPSTONE_BLOCK), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block DRIPSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.DRIPSTONE_BLOCK), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block DRIPSTONE_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.DRIPSTONE_BLOCK), registerSound(Blocks.DRIPSTONE_BLOCK, false));
+	public static final Block DRIPSTONE_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.DRIPSTONE_BLOCK), registerSound(Blocks.DRIPSTONE_BLOCK, false));
 
-	public static final Block MUD_BRICK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.MUD_BRICKS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block MUD_BRICK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.MUD_BRICKS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block MUD_BRICK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.MUD_BRICKS), registerSound(Blocks.MUD_BRICKS, false));
+	public static final Block MUD_BRICK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.MUD_BRICKS), registerSound(Blocks.MUD_BRICKS, false));
 
 	//Glass Doors
-	public static final Block BLACK_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block BLACK_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block BLACK_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS, false));
+	public static final Block BLACK_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS, false));
 	
-	public static final Block BLUE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block BLUE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block BLUE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS), registerSound(Blocks.BLUE_STAINED_GLASS, false));
+	public static final Block BLUE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLUE_STAINED_GLASS), registerSound(Blocks.BLUE_STAINED_GLASS, false));
 	
-	public static final Block BROWN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block BROWN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block BROWN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS), registerSound(Blocks.BROWN_STAINED_GLASS, false));
+	public static final Block BROWN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BROWN_STAINED_GLASS), registerSound(Blocks.BROWN_STAINED_GLASS, false));
 
-	public static final Block CYAN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block CYAN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block CYAN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS), registerSound(Blocks.CYAN_STAINED_GLASS, false));
+	public static final Block CYAN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.CYAN_STAINED_GLASS), registerSound(Blocks.CYAN_STAINED_GLASS, false));
 
-	public static final Block GRAY_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block GRAY_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block GRAY_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS), registerSound(Blocks.GRAY_STAINED_GLASS, false));
+	public static final Block GRAY_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GRAY_STAINED_GLASS), registerSound(Blocks.GRAY_STAINED_GLASS, false));
 
-	public static final Block GREEN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block GREEN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block GREEN_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS), registerSound(Blocks.GREEN_STAINED_GLASS, false));
+	public static final Block GREEN_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GREEN_STAINED_GLASS), registerSound(Blocks.GREEN_STAINED_GLASS, false));
 
-	public static final Block LIGHT_BLUE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block LIGHT_BLUE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block LIGHT_BLUE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), registerSound(Blocks.LIGHT_BLUE_STAINED_GLASS, false));
+	public static final Block LIGHT_BLUE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), registerSound(Blocks.LIGHT_BLUE_STAINED_GLASS, false));
 
-	public static final Block LIGHT_GRAY_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block LIGHT_GRAY_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block LIGHT_GRAY_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS), registerSound(Blocks.LIGHT_GRAY_STAINED_GLASS, false));
+	public static final Block LIGHT_GRAY_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS), registerSound(Blocks.LIGHT_GRAY_STAINED_GLASS, false));
 
-	public static final Block LIME_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block LIME_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block LIME_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS), registerSound(Blocks.LIME_STAINED_GLASS, false));
+	public static final Block LIME_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.LIME_STAINED_GLASS), registerSound(Blocks.LIME_STAINED_GLASS, false));
 
-	public static final Block MAGENTA_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block MAGENTA_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block MAGENTA_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS), registerSound(Blocks.MAGENTA_STAINED_GLASS, false));
+	public static final Block MAGENTA_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.MAGENTA_STAINED_GLASS), registerSound(Blocks.MAGENTA_STAINED_GLASS, false));
 
-	public static final Block ORANGE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block ORANGE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block ORANGE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS), registerSound(Blocks.ORANGE_STAINED_GLASS, false));
+	public static final Block ORANGE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.ORANGE_STAINED_GLASS), registerSound(Blocks.ORANGE_STAINED_GLASS, false));
 
-	public static final Block PINK_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block PINK_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block PINK_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS), registerSound(Blocks.PINK_STAINED_GLASS, false));
+	public static final Block PINK_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PINK_STAINED_GLASS), registerSound(Blocks.PINK_STAINED_GLASS, false));
 
-	public static final Block PURPLE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block PURPLE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block PURPLE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS), registerSound(Blocks.PURPLE_STAINED_GLASS, false));
+	public static final Block PURPLE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.PURPLE_STAINED_GLASS), registerSound(Blocks.PURPLE_STAINED_GLASS, false));
 
-	public static final Block RED_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block RED_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block RED_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS), registerSound(Blocks.RED_STAINED_GLASS, false));
+	public static final Block RED_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.RED_STAINED_GLASS), registerSound(Blocks.RED_STAINED_GLASS, false));
 
-	public static final Block WHITE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block WHITE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block WHITE_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS), registerSound(Blocks.WHITE_STAINED_GLASS, false));
+	public static final Block WHITE_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.WHITE_STAINED_GLASS), registerSound(Blocks.WHITE_STAINED_GLASS, false));
 
-	public static final Block YELLOW_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block YELLOW_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block YELLOW_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS), registerSound(Blocks.YELLOW_STAINED_GLASS, false));
+	public static final Block YELLOW_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS), registerSound(Blocks.YELLOW_STAINED_GLASS, false));
 
-	public static final Block TINTED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), NORMAL_CLOSE, NORMAL_OPEN);
-	public static final Block TINTED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), NORMAL_TRAPDOOR_CLOSE, NORMAL_TRAPDOOR_OPEN);
+	public static final Block TINTED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false));
+	public static final Block TINTED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false));
 
 	
 
@@ -325,6 +352,8 @@ public class moredoors implements ModInitializer {
 	
 	@Override
 	public void onInitialize() {
+
+		
 		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "gold_door"), GOLD_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "gold_door"), new BlockItem(GOLD_DOOR, new Item.Settings()));
