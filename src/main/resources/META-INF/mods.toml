@@ -42,7 +42,7 @@ authors="AfraidMonster" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-A vanilla style lightweight mod adding 36 new doors incuding (but not liminted to)  Metal, Stone, and Glass Doors.
+A vanilla style lightweight mod adding 54 new doors incuding (but not limited to)  Metal, Stone, and Glass Doors.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.moredoors]] #optional
