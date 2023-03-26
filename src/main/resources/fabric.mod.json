@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "id": "moredoors",
-  "version": "${version}",
+  "version": "1.4",
 
   "name": "More Doors",
-  "description": "A mod which adds More Doors and Trapdoors!",
+  "description": "A vanilla style lightweight mod adding 56 new doors incuding (but not liminted to)  Metal, Stone, and Glass Doors.",
   "authors": [
-    "AfraidMonster"
+    "AfraidMonster, JKT3CH-(Texture Support)"
   ],
   "contact": {
     "homepage": "https://AfraidMonster.com/",
