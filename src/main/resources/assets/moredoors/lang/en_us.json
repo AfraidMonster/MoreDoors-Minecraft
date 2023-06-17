@@ -36,7 +36,7 @@
     "block.moredoors.polished_deepslate_door":"Polished Deepslate Door",
     "block.moredoors.polished_deepslate_trapdoor":"Polished Deepslate Trapdoor",
     "block.moredoors.basalt_door":"Basalt Door",
-    "block.moredoors.basalt_trapdoor":"Basalt Trapdoor",
+    "block.moredoors.basalt_trapdoor":"Basalt TrapDoor",
     "block.moredoors.blackstone_door":"Blackstone Door",
     "block.moredoors.blackstone_trapdoor":"Blackstone Trapdoor",
     "block.moredoors.netherrack_door":"Netherrack Door",
@@ -73,6 +73,8 @@
     "block.moredoors.dripstone_trapdoor":"Dripstone Trapdoor",
     "block.moredoors.mud_brick_door":"Mud Brick Door",
     "block.moredoors.mud_brick_trapdoor":"Mud Brick Trapdoor",
+    "block.moredoors.sculk_door":"Sculk Door",
+    "block.moredoors.sculk_trapdoor":"Sculk Trapdoor",
 
     "block.moredoors.black_stained_glass_door":"Black Stained Glass Door", 
     "block.moredoors.black_stained_glass_trapdoor":"Black Stained Glass Trapdoor",
@@ -109,5 +111,5 @@
     "block.moredoors.tinted_glass_door":"Tinted Glass Door", 
     "block.moredoors.tinted_glass_trapdoor":"Tinted Glass Trapdoor",
     
-    "itemGroup.moredoors.more_doors":"More Doors"
+    "itemGroup.moredoorstab":"More Doors"
 }

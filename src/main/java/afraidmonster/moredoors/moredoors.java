@@ -175,6 +175,10 @@ public class moredoors implements ModInitializer {
 	public static final Block MUD_BRICK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.MUD_BRICKS), registerSound(Blocks.MUD_BRICKS, false));
 	public static final Block MUD_BRICK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.MUD_BRICKS), registerSound(Blocks.MUD_BRICKS, false));
 
+	public static final Block SCULK_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.SCULK), registerSound(Blocks.SCULK, false));
+
+	public static final Block SCULK_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.SCULK), registerSound(Blocks.SCULK, false));
+
 	//Glass Doors
 	public static final Block BLACK_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS, false));
 	public static final Block BLACK_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS, false));
@@ -317,6 +321,8 @@ public class moredoors implements ModInitializer {
 				entries.add(moredoors.DRIPSTONE_TRAPDOOR);
 				entries.add(moredoors.MUD_BRICK_DOOR);
 				entries.add(moredoors.MUD_BRICK_TRAPDOOR);
+				entries.add(moredoors.SCULK_DOOR);
+				entries.add(moredoors.SCULK_TRAPDOOR);
 				entries.add(moredoors.BLACK_STAINED_GLASS_DOOR); 
 				entries.add(moredoors.BLACK_STAINED_GLASS_TRAPDOOR);
 				entries.add(moredoors.BLUE_STAINED_GLASS_DOOR);
@@ -553,6 +559,9 @@ public class moredoors implements ModInitializer {
 
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "mud_brick_door"),MUD_BRICK_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "mud_brick_door"), new BlockItem(MUD_BRICK_DOOR, new Item.Settings()));
+
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "sculk_door"),SCULK_DOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "sculk_door"), new BlockItem(SCULK_DOOR, new Item.Settings()));
 		
 		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "amethyst_trapdoor"), AMETHYST_TRAPDOOR);
@@ -585,6 +594,8 @@ public class moredoors implements ModInitializer {
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "mud_brick_trapdoor"), MUD_BRICK_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "mud_brick_trapdoor"), new BlockItem(MUD_BRICK_TRAPDOOR, new Item.Settings()));
 
+		Registry.register(Registries.BLOCK, new Identifier("moredoors", "sculk_trapdoor"), SCULK_TRAPDOOR);
+		Registry.register(Registries.ITEM, new Identifier("moredoors", "sculk_trapdoor"), new BlockItem(SCULK_TRAPDOOR, new Item.Settings()));
 
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "black_stained_glass_door"), BLACK_STAINED_GLASS_DOOR); 
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "black_stained_glass_door"), new BlockItem(BLACK_STAINED_GLASS_DOOR, new Item.Settings()));
