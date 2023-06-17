@@ -106,10 +106,12 @@
       "moredoors:tinted_glass_door",
       "moredoors:tinted_glass_trapdoor",
       "moredoors:mud_brick_door",
-      "moredoors:mud_brick_trapdoor"
-      
+      "moredoors:mud_brick_trapdoor",
+      "moredoors:sculk_door",
+      "moredoors:sculk_trapdoor"
 
-      
+
+
 
 
 

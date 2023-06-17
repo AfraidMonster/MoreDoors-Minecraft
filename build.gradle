@@ -129,7 +129,7 @@ dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.19.4-45.0.23'
+    minecraft 'net.minecraftforge:forge:1.20-46.0.1'
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
@@ -147,11 +147,11 @@ jar {
     manifest {
         attributes([
                 "Specification-Title"     : "moredoors",
-                "Specification-Vendor"    : "moredoorssareus",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Specification-Vendor"    : "afraidmonster",
+                "Specification-Version"   : "1.4", // We are not version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "moredoorssareus",
+                "Implementation-Vendor"   : "afraidmonster",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

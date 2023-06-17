@@ -1,6 +1,7 @@
 package com.afraidmonster.moredoors;
 
 import com.afraidmonster.moredoors.Block.ModBlocks;
+import com.afraidmonster.moredoors.Block.MoreDoorsCreativeTab;
 import com.afraidmonster.moredoors.Item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -39,7 +40,7 @@ public class MoreDoors
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(ModBlocks::registerTab);
+        modEventBus.addListener(MoreDoorsCreativeTab::registerTab);
         modEventBus.addListener(this::setupClient);
 
 

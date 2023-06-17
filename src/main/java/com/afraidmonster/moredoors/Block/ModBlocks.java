@@ -3,11 +3,14 @@ package com.afraidmonster.moredoors.Block;
 
 import com.afraidmonster.moredoors.Item.ModItems;
 import com.afraidmonster.moredoors.MoreDoors;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -15,8 +18,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.Material;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -42,10 +43,10 @@ public class ModBlocks {
 
 
         if(isMetal){
-            return BlockSetType.register(new BlockSetType("blockset", soundGroup, METAL_CLOSE, METAL_OPEN, METAL_TRAP_CLOSE, METAL_TRAP_OPEN, SoundEvents.METAL_PRESSURE_PLATE_CLICK_OFF, SoundEvents.METAL_PRESSURE_PLATE_CLICK_ON, SoundEvents.STONE_BUTTON_CLICK_OFF, SoundEvents.STONE_BUTTON_CLICK_ON));
+            return BlockSetType.register(new BlockSetType("blockset",false, soundGroup, METAL_CLOSE, METAL_OPEN, METAL_TRAP_CLOSE, METAL_TRAP_OPEN, SoundEvents.METAL_PRESSURE_PLATE_CLICK_OFF, SoundEvents.METAL_PRESSURE_PLATE_CLICK_ON, SoundEvents.STONE_BUTTON_CLICK_OFF, SoundEvents.STONE_BUTTON_CLICK_ON));
 
         }else {
-            return BlockSetType.register(new BlockSetType("blockset", soundGroup, WOOD_CLOSE, WOOD_OPEN, WOOD_TRAP_CLOSE, WOOD_TRAP_OPEN, SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_ON, SoundEvents.WOODEN_BUTTON_CLICK_OFF, SoundEvents.WOODEN_BUTTON_CLICK_ON));
+            return BlockSetType.register(new BlockSetType("blockset",true, soundGroup, WOOD_CLOSE, WOOD_OPEN, WOOD_TRAP_CLOSE, WOOD_TRAP_OPEN, SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_ON, SoundEvents.WOODEN_BUTTON_CLICK_OFF, SoundEvents.WOODEN_BUTTON_CLICK_ON));
         }
 
 
@@ -70,7 +71,7 @@ public class ModBlocks {
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK),  registerSound(Blocks.REDSTONE_BLOCK, true)));
 
     public static final RegistryObject<Block> COAL_DOOR = registerBlock("coal_door", () ->
-            new CustomDoorBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5.0f, 6F).sound(SoundType.STONE),  registerSound(Blocks.COAL_BLOCK, true)));
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK),  registerSound(Blocks.COAL_BLOCK, true)));
 
     public static final RegistryObject<Block> STONE_DOOR = registerBlock("stone_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.STONE), registerSound(Blocks.STONE, false)));
@@ -98,7 +99,7 @@ public class ModBlocks {
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK), registerSound(Blocks.REDSTONE_BLOCK, true)));
 
     public static final RegistryObject<Block> COAL_TRAPDOOR = registerBlock("coal_trapdoor", () ->
-            new CustomTrapDoorBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5.0f, 6F).sound(SoundType.STONE), registerSound(Blocks.COAL_BLOCK, true)));
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK), registerSound(Blocks.COAL_BLOCK, true)));
 
     public static final RegistryObject<Block> STONE_TRAPDOOR = registerBlock("stone_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.STONE), registerSound(Blocks.STONE, false)));
@@ -225,7 +226,7 @@ public class ModBlocks {
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE), registerSound(Blocks.SMOOTH_STONE, false)));
 
     public static final RegistryObject<Block> OBSIDIAN_DOOR = registerBlock("obsidian_door", () ->
-            new CustomDoorBlock(BlockBehaviour.Properties.of(Material.METAL).strength(50.0f, 1200F).sound(SoundType.STONE), registerSound(Blocks.OBSIDIAN, true)));
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), registerSound(Blocks.OBSIDIAN, true)));
 
     public static final RegistryObject<Block> BRICK_DOOR = registerBlock("brick_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS), registerSound(Blocks.BRICKS, false)));
@@ -236,7 +237,7 @@ public class ModBlocks {
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.GLASS), registerSound(Blocks.GLASS, false)));
 
     public static final RegistryObject<Block> BEDROCK_DOOR = registerBlock("bedrock_door", () ->
-            new CustomDoorBlock(BlockBehaviour.Properties.of(Material.METAL).strength(-1.0f, 3600000F).sound(SoundType.STONE), registerSound(Blocks.BEDROCK, true)));
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK), registerSound(Blocks.BEDROCK, true)));
 
     public static final RegistryObject<Block> SPONGE_DOOR = registerBlock("sponge_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE), registerSound(Blocks.SPONGE, false)));
@@ -252,7 +253,7 @@ public class ModBlocks {
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE), registerSound(Blocks.SMOOTH_STONE, false)));
 
     public static final RegistryObject<Block> OBSIDIAN_TRAPDOOR = registerBlock("obsidian_trapdoor", () ->
-            new CustomTrapDoorBlock(BlockBehaviour.Properties.of(Material.METAL).strength(50.0f, 1200F).sound(SoundType.STONE), registerSound(Blocks.OBSIDIAN, true)));
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), registerSound(Blocks.OBSIDIAN, true)));
 
     public static final RegistryObject<Block> BRICK_TRAPDOOR = registerBlock("brick_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS), registerSound(Blocks.BRICKS, false)));
@@ -264,7 +265,7 @@ public class ModBlocks {
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.GLASS), registerSound(Blocks.GLASS, false)));
 
     public static final RegistryObject<Block> BEDROCK_TRAPDOOR = registerBlock("bedrock_trapdoor", () ->
-            new CustomTrapDoorBlock(BlockBehaviour.Properties.of(Material.METAL).strength(-1.0f, 3600000F).sound(SoundType.STONE), registerSound(Blocks.BEDROCK, true)));
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK), registerSound(Blocks.BEDROCK, true)));
 
     public static final RegistryObject<Block> SPONGE_TRAPDOOR = registerBlock("sponge_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SPONGE), registerSound(Blocks.SPONGE, false)));
@@ -275,6 +276,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MUD_BRICK_DOOR = registerBlock("mud_brick_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS), registerSound(Blocks.MUD_BRICKS, false)));
+
+    public static final RegistryObject<Block> SCULK_DOOR = registerBlock("sculk_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.SCULK), registerSound(Blocks.SCULK, false)));
 
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_DOOR = registerBlock("black_stained_glass_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS, false)));
@@ -307,6 +311,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MUD_BRICK_TRAPDOOR = registerBlock("mud_brick_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS), registerSound(Blocks.MUD_BRICKS, false)));
+
+    public static final RegistryObject<Block> SCULK_TRAPDOOR = registerBlock("sculk_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SCULK), registerSound(Blocks.SCULK, false)));
 
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_TRAPDOOR = registerBlock("black_stained_glass_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS, false)));
@@ -411,10 +418,13 @@ public class ModBlocks {
     }
 
 
-    public static void registerTab(CreativeModeTabEvent.Register event) {
+
+
+
+  /*  public static void registerTab(CreativeModeTabEvent.Register event) {
         event.registerCreativeModeTab(new ResourceLocation("moredoorstab", MoreDoors.MODID), builder -> builder.icon(() -> new ItemStack(ModBlocks.GOLD_DOOR.get())).displayItems((flags, output) -> ModItems.ITEMS.getEntries().forEach(o -> output.accept(o.get()))).title(Component.translatable("itemGroup.moredoorstab")));
     }
-
+*/
 
 
 }
