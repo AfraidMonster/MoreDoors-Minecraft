@@ -4,7 +4,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
 
-
 public class moredoorsclient implements ClientModInitializer {
 
     @Override
@@ -99,15 +98,5 @@ public class moredoorsclient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.YELLOW_STAINED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.TINTED_GLASS_DOOR, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(moredoors.TINTED_GLASS_TRAPDOOR, RenderLayer.getTranslucent());
-        
-        
-        
-
-        
-
-        
     }
-
-    
-    
 }

@@ -38,11 +38,6 @@ public class moredoors implements ModInitializer {
 
 	public static final RegistryKey<ItemGroup> MORE_DOORS = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "more_doors"));
 	
-
-	
-
-	
-	
 	//Metal Doors
 	public static BlockSetType registerSound(Block block, Boolean isMetal)  {
 		BlockSoundGroup soundGroup = block.getSoundGroup(null);
@@ -53,13 +48,7 @@ public class moredoors implements ModInitializer {
 		}else{
 			return BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"),true, soundGroup, WOOD_CLOSE, WOOD_OPEN, WOOD_TRAP_CLOSE, WOOD_TRAP_OPEN, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON);
 		}
-		
-		
-		
-		
 	}
-
-
 
 	public static final Block GOLD_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK), registerSound(Blocks.GOLD_BLOCK, true));
 	public static final Block GOLD_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.GOLD_BLOCK), registerSound(Blocks.GOLD_BLOCK, true));
@@ -230,15 +219,6 @@ public class moredoors implements ModInitializer {
 
 	public static final Block TINTED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false));
 	public static final Block TINTED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false));
-
-	
-
-	
-
-	
-
-	
-
 	
 	@Override
 	public void onInitialize() {
@@ -359,15 +339,8 @@ public class moredoors implements ModInitializer {
 				entries.add(moredoors.TINTED_GLASS_TRAPDOOR);
 			})
 
-			
-
             .build());
 
-	
-	
-
-		
-		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "gold_door"), GOLD_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "gold_door"), new BlockItem(GOLD_DOOR, new Item.Settings()));
 		
@@ -563,7 +536,6 @@ public class moredoors implements ModInitializer {
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "sculk_door"),SCULK_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "sculk_door"), new BlockItem(SCULK_DOOR, new Item.Settings()));
 		
-		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "amethyst_trapdoor"), AMETHYST_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "amethyst_trapdoor"), new BlockItem(AMETHYST_TRAPDOOR, new Item.Settings()));
 		
@@ -599,156 +571,106 @@ public class moredoors implements ModInitializer {
 
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "black_stained_glass_door"), BLACK_STAINED_GLASS_DOOR); 
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "black_stained_glass_door"), new BlockItem(BLACK_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "black_stained_glass_trapdoor"), BLACK_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "black_stained_glass_trapdoor"), new BlockItem(BLACK_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "blue_stained_glass_door"), BLUE_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "blue_stained_glass_door"), new BlockItem(BLUE_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "blue_stained_glass_trapdoor"), BLUE_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "blue_stained_glass_trapdoor"), new BlockItem(BLUE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "brown_stained_glass_door"), BROWN_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "brown_stained_glass_door"), new BlockItem(BROWN_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "brown_stained_glass_trapdoor"), BROWN_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "brown_stained_glass_trapdoor"), new BlockItem(BROWN_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "cyan_stained_glass_door"), CYAN_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "cyan_stained_glass_door"), new BlockItem(CYAN_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "cyan_stained_glass_trapdoor"), CYAN_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "cyan_stained_glass_trapdoor"), new BlockItem(CYAN_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "gray_stained_glass_door"), GRAY_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "gray_stained_glass_door"), new BlockItem(GRAY_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "gray_stained_glass_trapdoor"), GRAY_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "gray_stained_glass_trapdoor"), new BlockItem(GRAY_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "green_stained_glass_door"), GREEN_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "green_stained_glass_door"), new BlockItem(GREEN_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "green_stained_glass_trapdoor"), GREEN_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "green_stained_glass_trapdoor"), new BlockItem(GREEN_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "light_blue_stained_glass_door"), LIGHT_BLUE_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "light_blue_stained_glass_door"), new BlockItem(LIGHT_BLUE_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "light_blue_stained_glass_trapdoor"), LIGHT_BLUE_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "light_blue_stained_glass_trapdoor"), new BlockItem(LIGHT_BLUE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "light_gray_stained_glass_door"), LIGHT_GRAY_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "light_gray_stained_glass_door"), new BlockItem(LIGHT_GRAY_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "light_gray_stained_glass_trapdoor"), LIGHT_GRAY_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "light_gray_stained_glass_trapdoor"), new BlockItem(LIGHT_GRAY_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "lime_stained_glass_door"), LIME_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "lime_stained_glass_door"), new BlockItem(LIME_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "lime_stained_glass_trapdoor"), LIME_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "lime_stained_glass_trapdoor"), new BlockItem(LIME_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "magenta_stained_glass_door"), MAGENTA_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "magenta_stained_glass_door"), new BlockItem(MAGENTA_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "magenta_stained_glass_trapdoor"), MAGENTA_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "magenta_stained_glass_trapdoor"), new BlockItem(MAGENTA_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "orange_stained_glass_door"), ORANGE_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "orange_stained_glass_door"), new BlockItem(ORANGE_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "orange_stained_glass_trapdoor"), ORANGE_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "orange_stained_glass_trapdoor"), new BlockItem(ORANGE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "pink_stained_glass_door"), PINK_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "pink_stained_glass_door"), new BlockItem(PINK_STAINED_GLASS_DOOR, new Item.Settings()));
+		
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "pink_stained_glass_trapdoor"), PINK_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "pink_stained_glass_trapdoor"), new BlockItem(PINK_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "purple_stained_glass_door"), PURPLE_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "purple_stained_glass_door"), new BlockItem(PURPLE_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "purple_stained_glass_trapdoor"), PURPLE_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "purple_stained_glass_trapdoor"), new BlockItem(PURPLE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "red_stained_glass_door"), RED_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "red_stained_glass_door"), new BlockItem(RED_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "red_stained_glass_trapdoor"), RED_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "red_stained_glass_trapdoor"), new BlockItem(RED_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "white_stained_glass_door"), WHITE_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "white_stained_glass_door"), new BlockItem(WHITE_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "white_stained_glass_trapdoor"), WHITE_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "white_stained_glass_trapdoor"), new BlockItem(WHITE_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "yellow_stained_glass_door"), YELLOW_STAINED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "yellow_stained_glass_door"), new BlockItem(YELLOW_STAINED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "yellow_stained_glass_trapdoor"), YELLOW_STAINED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "yellow_stained_glass_trapdoor"), new BlockItem(YELLOW_STAINED_GLASS_TRAPDOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "tinted_glass_door"), TINTED_GLASS_DOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "tinted_glass_door"), new BlockItem(TINTED_GLASS_DOOR, new Item.Settings()));
+
 		Registry.register(Registries.BLOCK, new Identifier("moredoors", "tinted_glass_trapdoor"), TINTED_GLASS_TRAPDOOR);
 		Registry.register(Registries.ITEM, new Identifier("moredoors", "tinted_glass_trapdoor"), new BlockItem(TINTED_GLASS_TRAPDOOR, new Item.Settings()));
-
-		
-		
-		
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
+	
 	}
-
 	}
-
+	
