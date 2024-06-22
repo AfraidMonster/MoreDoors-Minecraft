@@ -272,7 +272,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> DRIPSTONE_TRAPDOOR = registerBlock("dripstone_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK), registerSound(Blocks.DRIPSTONE_BLOCK, false)));
 
-
     public static final RegistryObject<Block> MUD_BRICK_DOOR = registerBlock("mud_brick_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS), registerSound(Blocks.MUD_BRICKS, false)));
 
@@ -302,11 +301,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_DOOR = registerBlock("light_gray_stained_glass_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS), registerSound(Blocks.LIGHT_GRAY_STAINED_GLASS, false)));
 
-    
+
 
 
     public static final RegistryObject<Block> MUD_BRICK_TRAPDOOR = registerBlock("mud_brick_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS), registerSound(Blocks.MUD_BRICKS, false)));
+
+
 
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_TRAPDOOR = registerBlock("black_stained_glass_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS, false)));
@@ -331,8 +332,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_TRAPDOOR = registerBlock("light_gray_stained_glass_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS), registerSound(Blocks.LIGHT_GRAY_STAINED_GLASS, false)));
-
-    
 
     public static final RegistryObject<Block> LIME_STAINED_GLASS_DOOR = registerBlock("lime_stained_glass_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS),  registerSound(Blocks.LIME_STAINED_GLASS, false)));
@@ -359,7 +358,7 @@ public class ModBlocks {
             new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS), registerSound(Blocks.YELLOW_STAINED_GLASS, false)));
 
     public static final RegistryObject<Block> TINTED_GLASS_DOOR = registerBlock("tinted_glass_door", () ->
-            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false)));
+            new CustomTintedDoorBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false)));
     
 
 
@@ -388,7 +387,13 @@ public class ModBlocks {
             new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS),  registerSound(Blocks.YELLOW_STAINED_GLASS, false)));
 
     public static final RegistryObject<Block> TINTED_GLASS_TRAPDOOR = registerBlock("tinted_glass_trapdoor", () ->
-            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false)));
+            new CustomTintedTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false)));
+
+    public static final RegistryObject<Block> SCULK_DOOR = registerBlock("sculk_door", () ->
+            new CustomDoorBlock(BlockBehaviour.Properties.copy(Blocks.SCULK), registerSound(Blocks.SCULK, false)));
+
+    public static final RegistryObject<Block> SCULK_TRAPDOOR = registerBlock("sculk_trapdoor", () ->
+            new CustomTrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SCULK), registerSound(Blocks.SCULK, false)));
 
 
 

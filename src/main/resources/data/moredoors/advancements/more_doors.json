@@ -1,76 +1,52 @@
 {
-    "replace": false,
-    "values": [
-      "moredoors:diamond_door",
-      "moredoors:gold_door",
-      "moredoors:diamond_trapdoor",
-      "moredoors:gold_trapdoor",
-      "moredoors:lapis_door",
-      "moredoors:lapis_trapdoor",
-      "moredoors:copper_door",
-      "moredoors:copper_trapdoor",
-      "moredoors:netherite_door",
-      "moredoors:netherite_trapdoor",
-      "moredoors:emerald_door",
-      "moredoors:emerald_trapdoor",
-      "moredoors:redstone_door",
-      "moredoors:redstone_trapdoor",
-      "moredoors:coal_door",
-      "moredoors:coal_trapdoor",
+  "criteria": {
+    "has_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:oak_door"
+
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
       "moredoors:stone_door",
-      "moredoors:stone_trapdoor",
       "moredoors:cobblestone_door",
-      "moredoors:cobblestone_trapdoor",
       "moredoors:andesite_door",
-      "moredoors:andesite_trapdoor",
       "moredoors:diorite_door",
-      "moredoors:diorite_trapdoor",
       "moredoors:granite_door",
-      "moredoors:granite_trapdoor",
       "moredoors:sandstone_door",
-      "moredoors:sandstone_trapdoor",
       "moredoors:red_sandstone_door",
-      "moredoors:red_sandstone_trapdoor",
       "moredoors:cobbled_deepslate_door",
-      "moredoors:cobbled_deepslate_trapdoor",
       "moredoors:calcite_door",
-      "moredoors:calcite_trapdoor",
       "moredoors:polished_deepslate_door",
-      "moredoors:polished_deepslate_trapdoor",
       "moredoors:basalt_door",
-      "moredoors:basalt_trapdoor",
       "moredoors:blackstone_door",
-      "moredoors:blackstone_trapdoor",
       "moredoors:netherrack_door",
-      "moredoors:netherrack_trapdoor",
       "moredoors:end_stone_door",
-      "moredoors:end_stone_trapdoor",
       "moredoors:purpur_door",
-      "moredoors:purpur_trapdoor",
       "moredoors:quartz_door",
-      "moredoors:quartz_trapdoor",
       "moredoors:nether_brick_door",
-      "moredoors:nether_brick_trapdoor",
       "moredoors:prismarine_door",
-      "moredoors:prismarine_trapdoor",
       "moredoors:bookshelf_door",
-      "moredoors:bookshelf_trapdoor",
       "moredoors:amethyst_door",
-      "moredoors:amethyst_trapdoor",
       "moredoors:smooth_stone_door",
-      "moredoors:smooth_stone_trapdoor",
-      "moredoors:obsidian_door",
-      "moredoors:obsidian_trapdoor",
       "moredoors:brick_door",
-      "moredoors:brick_trapdoor",
       "moredoors:ice_door",
-      "moredoors:ice_trapdoor",
       "moredoors:glass_door",
-      "moredoors:glass_trapdoor",
       "moredoors:sponge_door",
-      "moredoors:sponge_trapdoor",
       "moredoors:dripstone_door",
-      "moredoors:dripstone_trapdoor",
       "moredoors:black_stained_glass_door",
       "moredoors:blue_stained_glass_door",
       "moredoors:brown_stained_glass_door",
@@ -87,6 +63,53 @@
       "moredoors:red_stained_glass_door",
       "moredoors:white_stained_glass_door",
       "moredoors:yellow_stained_glass_door",
+      "moredoors:tinted_glass_door",
+      "moredoors:mud_brick_door",
+      "moredoors:sculk_door",
+      "moredoors:diamond_door",
+      "moredoors:gold_door",
+      "moredoors:lapis_door",
+      "moredoors:copper_door",
+      "moredoors:netherite_door",
+      "moredoors:emerald_door",
+      "moredoors:redstone_door",
+      "moredoors:coal_door",
+      "moredoors:obsidian_door",
+      "moredoors:diamond_trapdoor",
+      "moredoors:gold_trapdoor",
+      "moredoors:lapis_trapdoor",
+      "moredoors:copper_trapdoor",
+      "moredoors:netherite_trapdoor",
+      "moredoors:emerald_trapdoor",
+      "moredoors:redstone_trapdoor",
+      "moredoors:coal_trapdoor",
+      "moredoors:stone_trapdoor",
+      "moredoors:cobblestone_trapdoor",
+      "moredoors:andesite_trapdoor",
+      "moredoors:diorite_trapdoor",
+      "moredoors:granite_trapdoor",
+      "moredoors:sandstone_trapdoor",
+      "moredoors:red_sandstone_trapdoor",
+      "moredoors:cobbled_deepslate_trapdoor",
+      "moredoors:calcite_trapdoor",
+      "moredoors:polished_deepslate_trapdoor",
+      "moredoors:basalt_trapdoor",
+      "moredoors:blackstone_trapdoor",
+      "moredoors:netherrack_trapdoor",
+      "moredoors:end_stone_trapdoor",
+      "moredoors:purpur_trapdoor",
+      "moredoors:quartz_trapdoor",
+      "moredoors:nether_brick_trapdoor",
+      "moredoors:prismarine_trapdoor",
+      "moredoors:bookshelf_trapdoor",
+      "moredoors:amethyst_trapdoor",
+      "moredoors:smooth_stone_trapdoor",
+      "moredoors:obsidian_trapdoor",
+      "moredoors:brick_trapdoor",
+      "moredoors:ice_trapdoor",
+      "moredoors:glass_trapdoor",
+      "moredoors:sponge_trapdoor",
+      "moredoors:dripstone_trapdoor",
       "moredoors:black_stained_glass_trapdoor",
       "moredoors:blue_stained_glass_trapdoor",
       "moredoors:brown_stained_glass_trapdoor",
@@ -103,19 +126,10 @@
       "moredoors:red_stained_glass_trapdoor",
       "moredoors:white_stained_glass_trapdoor",
       "moredoors:yellow_stained_glass_trapdoor",
-      "moredoors:tinted_glass_door",
       "moredoors:tinted_glass_trapdoor",
-      "moredoors:mud_brick_door",
       "moredoors:mud_brick_trapdoor",
-      "moredoors:sculk_door",
       "moredoors:sculk_trapdoor"
-
-
-
-
-
-
-
     ]
-
-  }
+  },
+  "sends_telemetry_event": false
+}
