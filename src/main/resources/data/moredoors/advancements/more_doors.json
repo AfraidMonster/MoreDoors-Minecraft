@@ -6,6 +6,7 @@
           {
             "items": [
               "minecraft:oak_door"
+
             ]
           }
         ]
@@ -44,7 +45,6 @@
       "moredoors:brick_door",
       "moredoors:ice_door",
       "moredoors:glass_door",
-      "moredoors:bedrock_door",
       "moredoors:sponge_door",
       "moredoors:dripstone_door",
       "moredoors:black_stained_glass_door",
@@ -108,7 +108,6 @@
       "moredoors:brick_trapdoor",
       "moredoors:ice_trapdoor",
       "moredoors:glass_trapdoor",
-      "moredoors:bedrock_trapdoor",
       "moredoors:sponge_trapdoor",
       "moredoors:dripstone_trapdoor",
       "moredoors:black_stained_glass_trapdoor",
