@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSetType;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -40,7 +41,7 @@ public class moredoors implements ModInitializer {
 	
 	//Metal Doors
 	public static BlockSetType registerSound(Block block, Boolean isMetal)  {
-		BlockSoundGroup soundGroup = block.getSoundGroup(null);
+		BlockSoundGroup soundGroup = block.getSoundGroup(block.getDefaultState());
 
 		if(isMetal){
 			return BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"),false,  soundGroup, METAL_CLOSE, METAL_OPEN, METAL_TRAP_CLOSE, METAL_TRAP_OPEN, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_STONE_BUTTON_CLICK_OFF, SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON);
