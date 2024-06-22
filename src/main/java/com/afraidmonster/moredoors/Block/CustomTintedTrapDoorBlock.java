@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class CustomTintedTrapDoorBlock extends TrapDoorBlock {
     public CustomTintedTrapDoorBlock(Properties properties, BlockSetType blockSetType) {
-        super(properties.noOcclusion(), blockSetType);
+        super(blockSetType, properties.noOcclusion());
     }
 
     public boolean propagatesSkylightDown(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {

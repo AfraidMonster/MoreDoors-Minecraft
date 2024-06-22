@@ -8,6 +8,6 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class CustomDoorBlock extends DoorBlock {
     public CustomDoorBlock(Properties properties, BlockSetType blockSetType) {
-        super(properties.noOcclusion(), blockSetType);
+        super(blockSetType, properties.noOcclusion());
     }
 }

@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class CustomTintedDoorBlock extends DoorBlock {
     public CustomTintedDoorBlock(Properties properties, BlockSetType blockSetType) {
-        super(properties.noOcclusion(), blockSetType);
+        super(blockSetType, properties.noOcclusion());
     }
 
     public boolean propagatesSkylightDown(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {

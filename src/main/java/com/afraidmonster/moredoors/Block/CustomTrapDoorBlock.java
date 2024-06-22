@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class CustomTrapDoorBlock extends TrapDoorBlock {
     public CustomTrapDoorBlock(Properties properties, BlockSetType blockSetType) {
-        super(properties.noOcclusion(), blockSetType);
+        super(blockSetType, properties.noOcclusion());
     }
 }
