@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:diorite_door",
+      "id": "moredoors:diorite_door",
       "count": 3
     }
   }

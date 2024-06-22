@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:sculk_door",
+      "id": "moredoors:sculk_door",
       "count": 3
     }
   }

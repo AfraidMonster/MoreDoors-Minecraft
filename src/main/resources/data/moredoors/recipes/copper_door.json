@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:copper_door",
+      "id": "moredoors:copper_door",
       "count": 3
     }
   }

@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:gold_door",
+      "id": "moredoors:gold_door",
       "count": 3
     }
   }

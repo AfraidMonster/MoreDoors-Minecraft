@@ -4,8 +4,8 @@
 //todo make tinted doors behave like the block
 //TODO 1. Add recipe for netherite door/trapdoor (json?)
 //Todo 2. Add advancement for recipes
---------------------------------------------------------------
 //Todo 2. Backport changes to 1.19 Forge
+--------------------------------------------------------------
 //Todo 3. Bring forward mod to 1.20.3 - 1.21
 //Todo 4. Port changes over to existing fabric versions
 //Todo 5. Bring forward mod to 1.20.3 - 1.21 Fabric

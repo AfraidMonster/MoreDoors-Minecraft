@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "item": "moredoors:magenta_stained_glass_door",
+    "id": "moredoors:magenta_stained_glass_door",
     "count": 3
   }
 }

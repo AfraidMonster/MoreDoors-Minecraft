@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:netherrack_door",
+      "id": "moredoors:netherrack_door",
       "count": 3
     }
   }

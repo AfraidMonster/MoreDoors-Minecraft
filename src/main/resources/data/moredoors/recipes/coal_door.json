@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:coal_door",
+      "id": "moredoors:coal_door",
       "count": 3
     }
   }

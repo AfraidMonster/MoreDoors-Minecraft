@@ -7,7 +7,7 @@
     "item": "moredoors:diamond_trapdoor"
   },
   "result": {
-    "item": "moredoors:netherite_trapdoor"
+    "id": "moredoors:netherite_trapdoor"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

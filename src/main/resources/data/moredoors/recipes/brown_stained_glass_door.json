@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "item": "moredoors:brown_stained_glass_door",
+    "id": "moredoors:brown_stained_glass_door",
     "count": 3
   }
 }

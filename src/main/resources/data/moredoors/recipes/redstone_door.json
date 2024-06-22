@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:redstone_door",
+      "id": "moredoors:redstone_door",
       "count": 3
     }
   }
