@@ -176,7 +176,7 @@ public class MoreDoors
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-           
+
         }
     }
 
