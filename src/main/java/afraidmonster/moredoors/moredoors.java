@@ -342,8 +342,8 @@ public class moredoors implements ModInitializer {
 	public static final Block YELLOW_STAINED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS), registerSound(Blocks.YELLOW_STAINED_GLASS, false));
 	public static final Block YELLOW_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.YELLOW_STAINED_GLASS), registerSound(Blocks.YELLOW_STAINED_GLASS, false));
 
-	public static final Block TINTED_GLASS_DOOR = new CustomDoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false));
-	public static final Block TINTED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false));
+	public static final Block TINTED_GLASS_DOOR = new CustomTintedDoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false));
+	public static final Block TINTED_GLASS_TRAPDOOR = new CustomTintedTrapdoorBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS), registerSound(Blocks.TINTED_GLASS, false));
 
 	
 
