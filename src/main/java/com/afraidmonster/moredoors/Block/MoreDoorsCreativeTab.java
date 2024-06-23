@@ -2,19 +2,17 @@ package com.afraidmonster.moredoors.Block;
 
 import com.afraidmonster.moredoors.Item.ModItems;
 import com.afraidmonster.moredoors.MoreDoors;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.RegisterEvent;
 
 public class MoreDoorsCreativeTab {
 
-    public static final ResourceKey<CreativeModeTab> MORE_DOORS = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation("more_doors", MoreDoors.MODID));
+    public static final ResourceKey<CreativeModeTab> MORE_DOORS = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath("more_doors", MoreDoors.MODID));
 
     public static void registerTab(RegisterEvent event) {
         event.register(Registries.CREATIVE_MODE_TAB, helper -> {

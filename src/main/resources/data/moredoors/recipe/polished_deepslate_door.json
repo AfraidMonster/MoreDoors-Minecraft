@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "##",
+      "##",
+      "##"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:polished_deepslate"
+      }
+    },
+    "result": {
+      "id": "moredoors:polished_deepslate_door",
+      "count": 3
+    }
+  }

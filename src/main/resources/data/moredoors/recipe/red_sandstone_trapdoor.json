@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:red_sandstone"
+      }
+    },
+    "result": {
+      "id": "moredoors:red_sandstone_trapdoor"
+    }
+  }

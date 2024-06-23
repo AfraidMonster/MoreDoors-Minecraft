@@ -225,7 +225,7 @@ public class ModBlocks {
             new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN),  registerSound( Blocks.OBSIDIAN, true)));
 
     public static final RegistryObject<Block> BRICK_DOOR = registerBlock("brick_door", () ->
-            new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BRICKS),  registerSound( Blocks.BRICKS, false)));
+            new CustomDoorBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BRICKS),  registerSound( Blocks.BRICKS, false)));
     public static final RegistryObject<Block> ICE_DOOR = registerBlock("ice_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ICE),  registerSound( Blocks.ICE, false)));
 
