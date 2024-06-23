@@ -3,7 +3,7 @@ package afraidmonster.moredoors;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSetType;
 import net.minecraft.block.BlockState;
@@ -25,29 +25,39 @@ import net.minecraft.util.Identifier;
 public class moredoors implements ModInitializer {
 
 	public static final String MOD_ID = "moredoors";
-	public static final SoundEvent WOOD_CLOSE = SoundEvents.BLOCK_WOODEN_DOOR_CLOSE;
-	public static final SoundEvent WOOD_OPEN = SoundEvents.BLOCK_WOODEN_DOOR_OPEN;
-
-	public static final SoundEvent WOOD_TRAP_CLOSE = SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE;
-	public static final SoundEvent WOOD_TRAP_OPEN = SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN;
-
-	public static final SoundEvent METAL_CLOSE = SoundEvents.BLOCK_IRON_DOOR_CLOSE;
-	public static final SoundEvent METAL_OPEN = SoundEvents.BLOCK_IRON_DOOR_OPEN;
-
-	public static final SoundEvent METAL_TRAP_CLOSE = SoundEvents.BLOCK_IRON_TRAPDOOR_CLOSE;
-	public static final SoundEvent METAL_TRAP_OPEN = SoundEvents.BLOCK_IRON_TRAPDOOR_OPEN;
 
 	public static final RegistryKey<ItemGroup> MORE_DOORS = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "more_doors"));
+
+	public static final BlockSetTypeBuilder METAL_TYPE = new BlockSetTypeBuilder();
+	public static final BlockSetTypeBuilder WOOD_TYPE = new BlockSetTypeBuilder();
 	
 	//Metal Doors
 	public static BlockSetType registerSound(Block block, Boolean isMetal)  {
 		BlockSoundGroup soundGroup = block.getSoundGroup(block.getDefaultState());
 
+
 		if(isMetal){
-			return BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"),false,  soundGroup, METAL_CLOSE, METAL_OPEN, METAL_TRAP_CLOSE, METAL_TRAP_OPEN, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_METAL_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_STONE_BUTTON_CLICK_OFF, SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON);
-		
+			 METAL_TYPE
+					 .openableByHand(false)
+					.openableByWindCharge(false)
+					.soundGroup(soundGroup)
+					.doorCloseSound(SoundEvents.BLOCK_IRON_DOOR_CLOSE)
+					.doorOpenSound(SoundEvents.BLOCK_IRON_DOOR_OPEN)
+					.trapdoorCloseSound(SoundEvents.BLOCK_IRON_TRAPDOOR_CLOSE)
+					.trapdoorOpenSound(SoundEvents.BLOCK_IRON_TRAPDOOR_OPEN);
+			 return METAL_TYPE.register(new Identifier("moredoors", "blockset_metal"));
+
+
 		}else{
-			return BlockSetTypeRegistry.register(new Identifier("moredoors","blockset"),true, soundGroup, WOOD_CLOSE, WOOD_OPEN, WOOD_TRAP_CLOSE, WOOD_TRAP_OPEN, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON);
+			WOOD_TYPE
+					.openableByHand(true)
+					.openableByWindCharge(true)
+					.soundGroup(soundGroup)
+					.doorCloseSound(SoundEvents.BLOCK_WOODEN_DOOR_CLOSE)
+					.doorOpenSound(SoundEvents.BLOCK_WOODEN_DOOR_OPEN)
+					.trapdoorCloseSound(SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE)
+					.trapdoorOpenSound(SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN);
+			return WOOD_TYPE.register(new Identifier("moredoors", "blockset_wood"));
 		}
 	}
 
