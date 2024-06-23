@@ -5,15 +5,17 @@
 //TODO 1. Add recipe for netherite door/trapdoor (json?)
 //Todo 2. Add advancement for recipes
 //Todo 2. Backport changes to 1.19 Forge
---------------------------------------------------------------
 //Todo 3. Bring forward mod to 1.20.3 - 1.21
+--------------------------------------------------------------
 //Todo 4. Port changes over to existing fabric versions
 //Todo 5. Bring forward mod to 1.20.3 - 1.21 Fabric
-//Todo 6. Publish updates
-//Todo 7. Update mod page
+//Todo 6. Port to NeoForged
+//Todo 7. Publish updates
+//Todo 8. Update mod page
 ===============================================================
 For future updates
 //Todo Extra. Add new doors/trapdoors (e.g Bone, Magma, Soulsand, Moss, Concrete, Slime, Tuff, Honoeycomb/honey, kelp, dark prismarine, crying obsidian)
 //Todo Extra. Make copper door weather and change colour/texture
 //todo extra. Make code more efficient/optimise
 //todo extra. Add separate achievements for each door - polish to make better for survival game.
+//todo extra. Add datagen for all versions being updated for Neo/forge/fabric
