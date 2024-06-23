@@ -8,7 +8,7 @@ import net.minecraft.world.BlockView;
 
 public class CustomTintedDoorBlock extends DoorBlock {
 
-    public CustomTintedDoorBlock(Settings settings, BlockSetType blockSetType ) {super(settings.nonOpaque(), blockSetType);}
+    public CustomTintedDoorBlock(Settings settings, BlockSetType blockSetType ) {super(blockSetType, settings.nonOpaque());}
 
     public boolean isTransparent(BlockState state, BlockView world, BlockPos pos) {
         return false;

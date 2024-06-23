@@ -6,7 +6,7 @@ import net.minecraft.block.DoorBlock;
 public class CustomDoorBlock extends DoorBlock {
     public CustomDoorBlock(Settings settings, BlockSetType blockSetType ) {
 
-        super(settings.nonOpaque(), blockSetType);
+        super(blockSetType, settings.nonOpaque());
     
         
         //TODO Auto-generated constructor stub

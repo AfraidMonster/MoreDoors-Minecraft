@@ -8,7 +8,7 @@ import net.minecraft.world.BlockView;
 
 public class CustomTintedTrapdoorBlock extends TrapdoorBlock {
 
-    public CustomTintedTrapdoorBlock(Settings settings, BlockSetType blockSetType) {super(settings.nonOpaque(), blockSetType);}
+    public CustomTintedTrapdoorBlock(Settings settings, BlockSetType blockSetType) {super(blockSetType, settings.nonOpaque());}
 
     public boolean isTransparent(BlockState state, BlockView world, BlockPos pos) {
         return false;
