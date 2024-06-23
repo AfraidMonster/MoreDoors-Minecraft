@@ -55,9 +55,6 @@ public class ModBlocks {
             new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK),  registerSound( Blocks.DIAMOND_BLOCK, true)));
     public static final RegistryObject<Block> LAPIS_DOOR = registerBlock("lapis_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK),  registerSound( Blocks.LAPIS_BLOCK, true)));
-    public static final RegistryObject<Block> COPPER_DOOR = registerBlock("copper_door", () ->
-            new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK),   registerSound( Blocks.COPPER_BLOCK, true)));
-
     public static final RegistryObject<Block> NETHERITE_DOOR = registerBlock("netherite_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK), registerSound( Blocks.NETHERITE_BLOCK, true)));
     public static final RegistryObject<Block> EMERALD_DOOR = registerBlock("emerald_door", () ->
@@ -81,9 +78,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> LAPIS_TRAPDOOR = registerBlock("lapis_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK),   registerSound( Blocks.LAPIS_BLOCK, true)));
-
-    public static final RegistryObject<Block> COPPER_TRAPDOOR = registerBlock("copper_trapdoor", () ->
-            new CustomTrapDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK),   registerSound( Blocks.COPPER_BLOCK, true)));
 
     public static final RegistryObject<Block> NETHERITE_TRAPDOOR = registerBlock("netherite_trapdoor", () ->
             new CustomTrapDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK),   registerSound( Blocks.NETHERITE_BLOCK, true)));
@@ -225,7 +219,7 @@ public class ModBlocks {
             new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN),  registerSound( Blocks.OBSIDIAN, true)));
 
     public static final RegistryObject<Block> BRICK_DOOR = registerBlock("brick_door", () ->
-            new CustomDoorBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BRICKS),  registerSound( Blocks.BRICKS, false)));
+            new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BRICKS),  registerSound( Blocks.BRICKS, false)));
     public static final RegistryObject<Block> ICE_DOOR = registerBlock("ice_door", () ->
             new CustomDoorBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ICE),  registerSound( Blocks.ICE, false)));
 
