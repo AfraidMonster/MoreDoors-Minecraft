@@ -6,6 +6,7 @@
           {
             "items": [
               "minecraft:oak_door",
+              "minecraft:spruce_door",
               "minecraft:birch_door",
               "minecraft:jungle_door",
               "minecraft:acacia_door",
