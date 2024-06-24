@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "moredoors",
-  "version": "1.5",
+  "version": "1.6",
 
   "name": "More Doors",
   "description": "A vanilla style lightweight mod adding 54 new doors including (but not limited to)  Metal, Stone, and Glass Doors.",
@@ -13,7 +13,7 @@
     "sources": "https://github.com/afraidmonster/metal-doors"
   },
 
-  "license": "CC0-1.0",
+  "license": "CC0-4.0",
 
 
   "environment": "*",
@@ -31,7 +31,7 @@
   
   "depends": {
     "fabricloader": ">=0.14.17",
-    "fabric": "*",
+    "fabric-api": "*",
     "minecraft": "1.19.4",
     "java": ">=17"
   },
