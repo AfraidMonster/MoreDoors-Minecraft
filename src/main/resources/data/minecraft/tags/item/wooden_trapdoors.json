@@ -1,14 +1,6 @@
 {
     "replace": false,
     "values": [
-      "moredoors:diamond_trapdoor",
-      "moredoors:gold_trapdoor",
-      "moredoors:lapis_trapdoor",
-      "moredoors:copper_trapdoor",
-      "moredoors:netherite_trapdoor",
-      "moredoors:emerald_trapdoor",
-      "moredoors:redstone_trapdoor",
-      "moredoors:coal_trapdoor",
       "moredoors:stone_trapdoor",
       "moredoors:cobblestone_trapdoor",
       "moredoors:andesite_trapdoor",
@@ -30,7 +22,6 @@
       "moredoors:bookshelf_trapdoor",
       "moredoors:amethyst_trapdoor",
       "moredoors:smooth_stone_trapdoor",
-      "moredoors:obsidian_trapdoor",
       "moredoors:brick_trapdoor",
       "moredoors:ice_trapdoor",
       "moredoors:glass_trapdoor",
@@ -56,6 +47,24 @@
       "moredoors:tinted_glass_trapdoor",
       "moredoors:mud_brick_trapdoor",
       "moredoors:sculk_trapdoor"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     ]
 
