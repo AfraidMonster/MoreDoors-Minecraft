@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+      "moredoors:diamond_trapdoor",
+      "moredoors:gold_trapdoor",
+      "moredoors:lapis_trapdoor",
+      "moredoors:netherite_trapdoor",
+      "moredoors:emerald_trapdoor",
+      "moredoors:redstone_trapdoor",
+      "moredoors:coal_trapdoor",
+      "moredoors:obsidian_trapdoor",
+      "moredoors:bedrock_trapdoor"
+
+    ]
+
+  }

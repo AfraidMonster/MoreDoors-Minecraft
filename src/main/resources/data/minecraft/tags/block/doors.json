@@ -1,0 +1,15 @@
+{
+    "replace": false,
+    "values": [
+      "moredoors:diamond_door",
+      "moredoors:gold_door",
+      "moredoors:lapis_door",
+      "moredoors:netherite_door",
+      "moredoors:emerald_door",
+      "moredoors:redstone_door",
+      "moredoors:coal_door",
+      "moredoors:obsidian_door",
+      "moredoors:bedrock_door"
+    ]
+
+  }
