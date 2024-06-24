@@ -5,7 +5,19 @@
         "items": [
           {
             "items": [
-              "minecraft:oak_door"
+              "minecraft:oak_door",
+              "minecraft:birch_door",
+              "minecraft:jungle_door",
+              "minecraft:acacia_door",
+              "minecraft:dark_oak_door",
+              "minecraft:mangrove_door",
+              "minecraft:cherry_door",
+              "minecraft:bamboo_door",
+              "minecraft:crimson_door",
+              "minecraft:warped_door",
+              "minecraft:iron_door",
+              "minecraft:copper_door"
+
 
             ]
           }
