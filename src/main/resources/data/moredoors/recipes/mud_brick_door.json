@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "item": "moredoors:mud_brick_door",
+    "id": "moredoors:mud_brick_door",
     "count": 3
   }
 }

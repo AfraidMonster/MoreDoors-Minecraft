@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:nether_brick_door",
+      "id": "moredoors:nether_brick_door",
       "count": 3
     }
   }

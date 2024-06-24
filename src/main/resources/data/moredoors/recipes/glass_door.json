@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:glass_door",
+      "id": "moredoors:glass_door",
       "count": 3
     }
   }

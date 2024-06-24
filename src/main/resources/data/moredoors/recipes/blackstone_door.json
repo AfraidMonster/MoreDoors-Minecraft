@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:blackstone_door",
+      "id": "moredoors:blackstone_door",
       "count": 3
     }
   }

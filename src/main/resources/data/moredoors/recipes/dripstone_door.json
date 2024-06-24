@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:dripstone_door",
+      "id": "moredoors:dripstone_door",
       "count": 3
     }
   }

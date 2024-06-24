@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:bookshelf_door",
+      "id": "moredoors:bookshelf_door",
       "count": 3
     }
   }

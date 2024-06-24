@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:bedrock_door",
+      "id": "moredoors:bedrock_door",
       "count": 3
     }
   }

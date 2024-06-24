@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:cobblestone_door",
+      "id": "moredoors:cobblestone_door",
       "count": 3
     }
   }

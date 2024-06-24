@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:ice_door",
+      "id": "moredoors:ice_door",
       "count": 3
     }
   }

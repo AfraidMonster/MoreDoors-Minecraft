@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:granite_door",
+      "id": "moredoors:granite_door",
       "count": 3
     }
   }

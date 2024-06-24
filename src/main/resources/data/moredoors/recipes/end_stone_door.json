@@ -11,7 +11,7 @@
       }
     },
     "result": {
-      "item": "moredoors:end_stone_door",
+      "id": "moredoors:end_stone_door",
       "count": 3
     }
   }

@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "item": "moredoors:tinted_glass_door",
+    "id": "moredoors:tinted_glass_door",
     "count": 3
   }
 }
