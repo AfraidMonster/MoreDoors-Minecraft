@@ -9,11 +9,13 @@
     "AfraidMonster, JKT3CH-(Texture Support)"
   ],
   "contact": {
-    "homepage": "https://AfraidMonster.com/",
-    "sources": "https://github.com/afraidmonster/metal-doors"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/moredoors",
+    "sources": "https://github.com/AfraidMonster/MoreDoors-Minecraft"
   },
 
   "license": "CC0-4.0",
+
+  "icon": "moredoors.png",
 
 
   "environment": "*",
