@@ -41,9 +41,7 @@ authors="AfraidMonster" #optional
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
 
 # The description text for the mod (multi line!) (#mandatory)
-description='''
-A vanilla style lightweight mod adding 54 new doors including (but not limited to)  Metal, Stone, and Glass Doors.
-'''
+description='''A lightweight Vanilla style mod that adds over 50 unique doors and trapdoors to Minecraft!'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.moredoors]] #optional
     # the modid of the dependency
