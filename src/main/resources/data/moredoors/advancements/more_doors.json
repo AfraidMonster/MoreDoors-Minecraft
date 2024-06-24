@@ -15,8 +15,7 @@
               "minecraft:bamboo_door",
               "minecraft:crimson_door",
               "minecraft:warped_door",
-              "minecraft:iron_door",
-              "minecraft:copper_door"
+              "minecraft:iron_door"
 
             ]
           }
