@@ -169,7 +169,7 @@ public class moredoors implements ModInitializer {
 
 	public static final Block SCULK_TRAPDOOR = new CustomTrapdoorBlock(AbstractBlock.Settings.copy(Blocks.SCULK), registerSound(Blocks.SCULK.getDefaultState(), false));
 
-	//Glass Door
+	//Glass Doors
 	public static final Block BLACK_STAINED_GLASS_DOOR = new CustomDoorBlock(AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS.getDefaultState(), false));
 	public static final Block BLACK_STAINED_GLASS_TRAPDOOR = new CustomTrapdoorBlock(AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS), registerSound(Blocks.BLACK_STAINED_GLASS.getDefaultState(), false));
 
