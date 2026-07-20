@@ -15,7 +15,7 @@ public class CustomTintedTrapdoorBlock extends TrapdoorBlock {
     }
 
     public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
-        return world.getMaxLightLevel();
+        return 15;
     }
 
 }

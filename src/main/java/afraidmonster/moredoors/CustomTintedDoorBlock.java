@@ -15,7 +15,7 @@ public class CustomTintedDoorBlock extends DoorBlock {
     }
 
     public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
-        return world.getMaxLightLevel();
+        return 15;
     }
 
 }
