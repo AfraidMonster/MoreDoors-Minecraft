@@ -5,9 +5,7 @@
       "##"
     ],
     "key": {
-      "#": {
-        "item": "minecraft:sponge"
-      }
+      "#": "minecraft:sponge"
     },
     "result": {
       "id": "moredoors:sponge_trapdoor"

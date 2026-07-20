@@ -6,9 +6,7 @@
       "##"
     ],
     "key": {
-      "#": {
-        "item": "minecraft:emerald"
-      }
+      "#": "minecraft:emerald"
     },
     "result": {
       "id": "moredoors:emerald_door",

@@ -5,9 +5,7 @@
     "##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:mud_bricks"
-    }
+    "#": "minecraft:mud_bricks"
   },
   "result": {
     "id": "moredoors:mud_brick_trapdoor"

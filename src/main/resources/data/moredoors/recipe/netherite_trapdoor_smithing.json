@@ -1,15 +1,8 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:netherite_ingot"
-  },
-  "base": {
-    "item": "moredoors:diamond_trapdoor"
-  },
+  "addition":  "minecraft:netherite_ingot",
+  "base": "moredoors:diamond_trapdoor",
   "result": {
     "id": "moredoors:netherite_trapdoor"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
-}
+  "template":  "minecraft:netherite_upgrade_smithing_template"}
