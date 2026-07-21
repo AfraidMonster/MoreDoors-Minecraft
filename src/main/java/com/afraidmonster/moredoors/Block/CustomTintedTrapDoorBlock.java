@@ -1,7 +1,5 @@
 package com.afraidmonster.moredoors.Block;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -11,11 +9,11 @@ public class CustomTintedTrapDoorBlock extends TrapDoorBlock {
         super(blockSetType, properties.noOcclusion());
     }
 
-    public boolean propagatesSkylightDown(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+    public boolean propagatesSkylightDown(BlockState blockState) {
         return false;
     }
 
-    public int getLightBlock(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
-        return blockGetter.getMaxLightLevel();
+    public int getLightBlock(BlockState blockState) {
+        return 15;
     }
 }

@@ -6,9 +6,7 @@
       "##"
     ],
     "key": {
-      "#": {
-        "item": "minecraft:polished_deepslate"
-      }
+      "#":"minecraft:polished_deepslate"
     },
     "result": {
       "id": "moredoors:polished_deepslate_door",

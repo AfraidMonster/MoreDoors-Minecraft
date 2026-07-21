@@ -6,9 +6,7 @@
       "##"
     ],
     "key": {
-      "#": {
-        "item": "minecraft:obsidian"
-      }
+      "#": "minecraft:obsidian"
     },
     "result": {
       "id": "moredoors:obsidian_door",

@@ -5,9 +5,7 @@
       "##"
     ],
     "key": {
-      "#": {
-        "item": "minecraft:cobblestone"
-      }
+      "#": "minecraft:cobblestone"
     },
     "result": {
       "id": "moredoors:cobblestone_trapdoor"

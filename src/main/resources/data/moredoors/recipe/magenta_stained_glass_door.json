@@ -6,9 +6,7 @@
     "##"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:magenta_stained_glass"
-    }
+    "#": "minecraft:magenta_stained_glass"
   },
   "result": {
     "id": "moredoors:magenta_stained_glass_door",

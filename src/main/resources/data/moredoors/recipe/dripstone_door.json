@@ -6,9 +6,7 @@
       "##"
     ],
     "key": {
-      "#": {
-        "item": "minecraft:dripstone_block"
-      }
+      "#": "minecraft:dripstone_block"
     },
     "result": {
       "id": "moredoors:dripstone_door",
