@@ -1,18 +1,18 @@
 package afraidmonster.moredoors;
 
-import net.minecraft.block.BlockSetType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.TrapdoorBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 
-public class CustomTintedTrapdoorBlock extends TrapdoorBlock {
+public class CustomTintedTrapdoorBlock extends TrapDoorBlock {
 
-    public CustomTintedTrapdoorBlock(Settings settings, BlockSetType blockSetType) {super(blockSetType, settings.nonOpaque());}
+    public CustomTintedTrapdoorBlock(Properties settings, BlockSetType blockSetType) {super(blockSetType, settings.noOcclusion());}
 
-    public boolean isTransparent(BlockState state) {
+    public boolean propagatesSkylightDown(BlockState state) {
         return false;
     }
 
-    public int getOpacity(BlockState state) {
+    public int getLightDampening(BlockState state) {
         return 15;
     }
 

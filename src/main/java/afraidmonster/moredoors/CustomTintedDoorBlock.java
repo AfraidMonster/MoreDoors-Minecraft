@@ -1,18 +1,18 @@
 package afraidmonster.moredoors;
 
-import net.minecraft.block.BlockSetType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.DoorBlock;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class CustomTintedDoorBlock extends DoorBlock {
 
-    public CustomTintedDoorBlock(Settings settings, BlockSetType blockSetType ) {super(blockSetType, settings.nonOpaque());}
+    public CustomTintedDoorBlock(Properties settings, BlockSetType blockSetType ) {super(blockSetType, settings.noOcclusion());}
 
-    public boolean isTransparent(BlockState state) {
+    public boolean propagatesSkylightDown(BlockState state) {
         return false;
     }
 
-    public int getOpacity(BlockState state) {
+    public int getLightDampening(BlockState state) {
         return 15;
     }
 
